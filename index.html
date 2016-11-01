@@ -1,29 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- <link rel="stylesheet" href="style.css"> -->
 <script src="snap.svg-min.js"></script>
 </head>
 <body>
 <div class="loader">
-<!-- <svg version="1.1"
-     baseProfile="full"
-     width="500" height="500"
-     xmlns="http://www.w3.org/2000/svg">
-
-     <circle cx="250" cy="250" r="50" fill="blue" />
-        <circle cx="250" cy="250" r="10" fill="white">
-            <animate attributeName="r" attributeType="XML"
-             from="10"  to="55"
-             begin="0s" dur="1s"
-             fill="remove" repeatCount="indefinite"/>
-        </circle>
-
-</svg> -->
 </div>
 <script>
 var s = Snap(700, 700);
-// Lets create big circle in the middle:
 var redCircle = s.circle(200, 100, 0);
 var greenCircle = s.circle(200, 100, 50);
 var blueCircle = s.circle(200, 100, 50);
@@ -43,11 +27,9 @@ var interval = 450;
 window.setInterval(function() {
     if(flag === 0) {      
         redCircle.animate({r: 50}, interval, null, function() {
-            // greenCircle.after(blueCircle);
             blueCircle.attr({
                 r: 0
             });
-            // redCircle.after(blueCircle);
             redCircle.after(blueCircle);
         });
     }
@@ -56,7 +38,6 @@ window.setInterval(function() {
             greenCircle.attr({
                 r: 0
             });
-            // greenCircle.after(redCircle);
             blueCircle.after(greenCircle);
         });
     }
@@ -65,7 +46,6 @@ window.setInterval(function() {
             redCircle.attr({
                 r: 0
             });
-            // blueCircle.after(greenCircle);
             greenCircle.after(redCircle);
         });
     }
