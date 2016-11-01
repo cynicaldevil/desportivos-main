@@ -26,60 +26,51 @@ var s = Snap(700, 700);
 // Lets create big circle in the middle:
 var redCircle = s.circle(200, 100, 0);
 var greenCircle = s.circle(200, 100, 50);
-// var blueCircle = s.circle(200, 100, 0);
+var blueCircle = s.circle(200, 100, 50);
 greenCircle.attr({
     fill: 'green'
 });
 redCircle.attr({
     fill: 'red'
 });
-// blueCircle.attr({
-//     fill: 'blue'
-// });
+blueCircle.attr({
+    fill: 'blue'
+});
 var flag = 0;
-// blueCircle.after(redCircle);
+blueCircle.after(greenCircle);
 greenCircle.after(redCircle);
 var interval = 450;
 window.setInterval(function() {
     if(flag === 0) {      
         redCircle.animate({r: 50}, interval, null, function() {
             // greenCircle.after(blueCircle);
-            greenCircle.attr({
+            blueCircle.attr({
                 r: 0
             });
-            redCircle.after(greenCircle);
-
+            // redCircle.after(blueCircle);
+            redCircle.after(blueCircle);
         });
     }
     else if(flag === 1) {
+        blueCircle.animate({r: 50}, interval, null, function() {
+            greenCircle.attr({
+                r: 0
+            });
+            // greenCircle.after(redCircle);
+            blueCircle.after(greenCircle);
+        });
+    }
+    else if(flag === 2) {
         greenCircle.animate({r: 50}, interval, null, function() {
             redCircle.attr({
                 r: 0
             });
-            // redCircle.after(blueCircle);
+            // blueCircle.after(greenCircle);
             greenCircle.after(redCircle);
         });
     }
-    // else if(flag === 2) {      
-    //     blueCircle.animate({r: 50}, interval, null, function() {
-    //         blueCircle.attr({
-    //             r: 0
-    //         });
-    //         blueCircle.after(greenCircle);
-    //         blueCircle.after(redCircle);
-    //     });
-    // }
 
-    flag = (++flag) % 2;
-    // if(flag) {
-    //     blueCircle.before(redCircle);
-    //     flag = !flag;
-    // }
-    // else {
-    //     blueCircle.after(redCircle);
-    //     flag = !flag;
-    // }
-    // console.log(flag);
+    flag = (++flag) % 3;
 }, 500);
 </script>
 </body>
