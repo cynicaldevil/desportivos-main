@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import { Button } from 'react-bootstrap';
 
 class Root extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class Root extends React.Component {
             <div>
                 <p style={{color: 'blue'}} >Hello World!</p>
                 <button style={styles}>Button</button>
+                <Button bsStyle="primary">Primary</Button>
             </div>
         );
     }
