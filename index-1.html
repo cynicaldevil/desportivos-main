@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="snap.svg-min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="row center">
+</div>
+</div>
+<div id="particles-js" class="container">
+<script>
+var s = Snap(500, 500);
+var redCircle = s.circle(200, 100, 0);
+var greenCircle = s.circle(200, 100, 50);
+var blueCircle = s.circle(200, 100, 50);
+greenCircle.attr({
+    fill: '#FC9808'
+});
+redCircle.attr({
+    fill: '#B6FC08'
+});
+blueCircle.attr({
+    fill: '#DF3E0A'
+});
+    var whiteCircle = s.circle(200, 100, 10);
+    whiteCircle.attr({
+      fill: 'rgba(255, 255, 255, 0.5)'
+    });
+var flag = 0;
+blueCircle.after(greenCircle);
+greenCircle.after(whiteCircle);
+whiteCircle.after(redCircle);
+var interval = 600;
+window.setInterval(function() {
+
+    if(flag === 0) {
+    blueCircle.after(greenCircle);
+    greenCircle.after(whiteCircle);
+    whiteCircle.after(redCircle);
+        redCircle.animate({r: 50}, interval, null, function() {
+            blueCircle.attr({
+                r: 0
+            });
+        });
+      whiteCircle.animate({r: 60}, interval, null, function() {
+          whiteCircle.attr({
+              r: 10
+          });
+      });
+    }
+    else if(flag === 1) {
+      greenCircle.after(redCircle);
+      redCircle.after(whiteCircle);
+      whiteCircle.after(blueCircle);
+        blueCircle.animate({r: 50}, interval, null, function() {
+            greenCircle.attr({
+                r: 0
+            });
+        });
+      whiteCircle.animate({r: 60}, interval, null, function() {
+          whiteCircle.attr({
+              r: 10
+          });
+      });
+    }
+    else if(flag === 2) {
+      redCircle.after(blueCircle);
+      blueCircle.after(whiteCircle);
+      whiteCircle.after(greenCircle);
+        greenCircle.animate({r: 50}, interval, null, function() {
+            redCircle.attr({
+                r: 0
+            });
+
+        });
+      whiteCircle.animate({r: 60}, interval, null, function() {
+          whiteCircle.attr({
+              r: 10
+          });
+      });
+    }
+
+
+
+    flag = (++flag) % 3;
+}, 700);
+</script>
+<script>
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 380,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#E8E8E8"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#E8E8E8",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
