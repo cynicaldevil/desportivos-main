@@ -1,19 +1,16 @@
 import React from 'react';
 
-import Navbar from './Navbar';
-
-class Root extends React.Component {
+class About extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         return(
             <div>
-            <Navbar />
-            {this.props.children}
+                <p>About</p>
             </div>
         );
     }
 }
 
-export default Root;
+export default About;

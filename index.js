@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from './components/Root.jsx';
+
+import Routes from './components/Routes.jsx';
 
 ReactDOM.render(
-  <Root />,
+  Routes,
   document.getElementById('mountNode')
 );

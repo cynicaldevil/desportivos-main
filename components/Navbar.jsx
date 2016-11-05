@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 import styles from '../css/screen.css';
 
 class Navbar extends React.Component {
@@ -13,12 +13,12 @@ class Navbar extends React.Component {
                 <div className="row">
                   <nav className="nav-2">
                   <ul id="navigation">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Sponsors</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About us</Link></li>
+                        <li><Link to="/events">Events</Link></li>
+                        <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/sponsors">Sponsors</Link></li>
+                        <li><Link to="/contact-us">Contact Us</Link></li>
                     </ul>
                     </nav>
                 </div>
@@ -29,4 +29,4 @@ class Navbar extends React.Component {
     }
 }
 
-module.exports = Navbar;
+export default Navbar;

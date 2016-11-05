@@ -36,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/cynicaldevil/desportivos-main/issues"
   },
-  "homepage": "https://github.com/cynicaldevil/desportivos-main#readme"
+  "homepage": "https://github.com/cynicaldevil/desportivos-main#readme",
+  "dependencies": {
+    "react-router": "^3.0.0"
+  }
 }
