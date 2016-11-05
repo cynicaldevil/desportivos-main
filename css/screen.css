@@ -1,0 +1,239 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+.row {
+    *zoom:1}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+a {
+    text-decoration: none;
+    color: #0091d4;
+    outline: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+a:hover {
+    text-decoration: none
+}
+
+*,*:before,*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+::-moz-selection {
+    background: #72b1c8;
+    color: #fff;
+    text-shadow: none
+}
+
+::selection {
+    background: #72b1c8;
+    color: #fff;
+    text-shadow: none
+}
+
+.row {
+    max-width: 1700px;
+    margin: 0 auto
+}
+
+@media screen and (max-width: 1700px) {
+    .row {
+        margin:0 40px
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .row {
+        margin:0
+    }
+}
+
+.row>.btn--2 {
+    float: right;
+    margin-top: 167px
+}
+
+@media screen and (max-width: 640px) {
+    .row>.btn--2 {
+        margin:0 auto 35px;
+        display: block;
+        float: none;
+        text-align: center
+    }
+}
+
+.header-main {
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 94px;
+    width: 98%;
+    z-index: 1000
+}
+
+@media screen and (max-width: 640px) {
+    .header-main {
+        height:auto;
+        position: relative;
+        width: 100%
+    }
+}
+
+.header-main .close-helper {
+    float: left;
+    margin: 20px 40px 0 0;
+    display: none
+}
+
+.overflow--hidden .header-main .close-helper {
+    display: inline-block
+}
+
+@media screen and (max-width: 640px) {
+    .header-main .close-helper {
+        margin:0 auto;
+        width: 100%;
+        float: none;
+        text-align: center
+    }
+}
+
+.header-main .logo {
+    float: left;
+    margin: 20px 40px 0 0
+}
+
+.overflow--hidden .header-main .logo {
+    display: none
+}
+
+@media screen and (max-width: 640px) {
+    .header-main .logo {
+        margin:0 auto;
+        width: 100%;
+        float: none;
+        text-align: center
+    }
+}
+
+.header-main .nav-1 {
+    float: right;
+    margin: 25px 0 0 30px;
+    overflow: hidden;
+    height: 42px
+}
+
+@media screen and (max-width: 640px) {
+    .header-main .nav-1 {
+        margin:0;
+        float: none;
+        text-align: center
+    }
+}
+
+.header-main .nav-1.nav-1--offset ul {
+    margin-top: -42px
+}
+
+.header-main .nav-2 {
+    float: left
+}
+
+@media screen and (max-width: 930px) {
+    .header-main .nav-2 {
+        margin-top:12px
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .header-main .nav-2 {
+        float:none;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 0
+    }
+}
+
+.header-main .nav-3 {
+    float: right
+}
+
+@media screen and (max-width: 640px) {
+    .header-main .nav-3 {
+        text-align:center;
+        float: none
+    }
+}
+
+.nav-1 li,.nav-2 li,.nav-3 li {
+    display: inline-block;
+    text-transform: uppercase
+}
+
+.nav-1 li a,.nav-2 li a,.nav-3 li a {
+    color: #4d4d4d;
+    -webkit-transition: ease 0.3s all;
+    -moz-transition: ease 0.3s all;
+    -o-transition: ease 0.3s all;
+    transition: ease 0.3s all
+}
+
+.nav-1 li a:hover,.nav-2 li a:hover,.nav-3 li a:hover {
+    color: #fff
+}
+
+.nav-1 li a:active,.nav-2 li a:active,.nav-3 li a:active {
+    color: #4d4d4d
+}
+
+.nav-1 li.current a,.nav-2 li.current a,.nav-3 li.current a {
+    color: #fff
+}
+
+.nav-2 li {
+    font-family: "Montserrat",sans-serif;
+    font-size: 11px;
+    line-height: 94px;
+    margin-right: 25px
+}
+
+@media screen and (max-width: 930px) {
+    .nav-2 li {
+        font-size:10px;
+        line-height: 17px;
+        display: block
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .nav-2 li {
+        margin:0;
+        padding: 0 10px;
+        line-height: 1.1;
+        display: inline-block
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .nav-3 {
+        margin-bottom:5px
+    }
+}
