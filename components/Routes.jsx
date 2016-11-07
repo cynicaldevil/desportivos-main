@@ -5,7 +5,6 @@ import Root from './Root';
 import Home from './Home';
 import About from './About';
 import Events from './Events';
-import Team from './Team';
 import Sponsors from './Sponsors';
 import Contacts from './Contacts';
 
@@ -15,7 +14,6 @@ export default (
             <IndexRoute component={Home} />
             <Route path="about" component={About}/>
             <Route path="events" component={Events} />
-            <Route path="team" component={Team} />
             <Route path="sponsors" component={Sponsors} />
             <Route path="contact-us" component={Contacts} />
         {/*<Route path="*" component={NoMatch} />*/}
