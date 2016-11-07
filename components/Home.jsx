@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import { Button } from 'react-bootstrap';
 
-class Home extends React.Component {
+class Hexagon extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -10,7 +10,7 @@ class Home extends React.Component {
         const styles = {
             hexagon_wrapper: {
                 textAlign: 'center',
-                margin: 20,
+                margin: 2,
                 height: 100,
                 width: 100,
                 position: 'relative',
@@ -44,12 +44,61 @@ class Home extends React.Component {
                 transform: 'rotateZ(-60deg)'
             }
         };
+        const customStyles = this.props.customStyles;
+        let constructedStyles = {};
+        for(var key in styles) {
+            if(customStyles[key] !== null) {
+                constructedStyles[key] = {
+                    ...styles[key],
+                    ...customStyles[key]
+                };
+            }
+            else {
+                constructedStyles[key] = styles[key];
+            }
+        }
+        return (
+            <div style={constructedStyles.hexagon_wrapper} >
+                <div style={constructedStyles.hexagon_before} />
+                <div style={constructedStyles.hexagon} ></div>
+                <div style={constructedStyles.hexagon_after} />
+            </div>
+        );
+    }
+}
+
+Hexagon.defaultProps = {
+    customStyles: {
+        hexagon_wrapper: null,
+        hexagon: null,
+        hexagon_after: null,
+        hexagon_before: null
+    }
+};
+
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        const styles = {
+            row: {
+                height: 120,
+                display: 'flex',
+                alignItems: 'center'
+            },
+        };
         return (
             <div style={{backgroundColor: '#ecf0f1'}}>
-                <div style={styles.hexagon_wrapper} >
-                    <div style={styles.hexagon_before} />
-                    <div style={styles.hexagon} ></div>
-                    <div style={styles.hexagon_after} />
+                <div style={styles.row}>
+                    <Hexagon />
+                    <Hexagon />
+                </div>
+                <div style={styles.row}>
+                    <Hexagon customStyles={{hexagon_wrapper: {
+                        marginTop: -58,
+                        marginLeft: 54
+                    }}} />
                 </div>
             </div>
         );
