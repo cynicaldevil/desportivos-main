@@ -7,6 +7,8 @@ import About from './About';
 import Events from './Events';
 import Sponsors from './Sponsors';
 import Contacts from './Contacts';
+import Gallery from './Gallery';
+import Register from './Register';
 
 export default (
     <Router history={hashHistory}>
@@ -15,6 +17,8 @@ export default (
             <Route path="about" component={About}/>
             <Route path="events" component={Events} />
             <Route path="sponsors" component={Sponsors} />
+            <Route path="register" component={Register} />
+            <Route path="gallery" component={Gallery} />
             <Route path="contact-us" component={Contacts} />
         {/*<Route path="*" component={NoMatch} />*/}
         </Route>
