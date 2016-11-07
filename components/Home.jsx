@@ -10,9 +10,10 @@ class Hexagon extends React.Component {
         const styles = {
             hexagon_wrapper: {
                 textAlign: 'center',
-                margin: 2,
-                height: 100,
-                width: 100,
+                marginLeft: this.props.length * 0.1,
+                marginRight: this.props.length * 0.1,
+                height: this.props.length,
+                width: this.props.length,
                 position: 'relative',
                 display: 'inline-block',
                 transform: 'rotateZ(90deg)'
@@ -22,6 +23,7 @@ class Hexagon extends React.Component {
                 width: (100 * 0.57735) + '%',
                 display: 'inline-block',
                 backgroundColor: '#556474',
+                transform: 'rotateZ(90deg)'
             },
             hexagon_before: {
                 position: 'absolute',
@@ -31,7 +33,7 @@ class Hexagon extends React.Component {
                 height: 'inherit',
                 width: (100 * 0.57735) + '%',
                 content: '',
-                transform: 'rotateZ(60deg)'
+                transform: 'rotateZ(30deg)'
             },
             hexagon_after: {
                 position: 'absolute',
@@ -41,7 +43,7 @@ class Hexagon extends React.Component {
                 height: 'inherit',
                 width: (100 * 0.57735) + '%',
                 content: '',
-                transform: 'rotateZ(-60deg)'
+                transform: 'rotateZ(-30deg)'
             }
         };
         const customStyles = this.props.customStyles;
