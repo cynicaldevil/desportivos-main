@@ -26,8 +26,6 @@ class Events extends React.Component {
 
     componentDidMount() {
 
-        // IMP TODO: Fix effect on hover to show canvas and wireframe images
-
         const script_paths = [
             '../js/events/modernizr.custom.js',
             '../js/events/imagesloaded.pkgd.min.js',
