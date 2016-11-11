@@ -1,10 +1,27 @@
 import React from 'react';
 
+class Sport extends React.Component {
+    constructor(props) {
+        super(props) ;
+    }
+
+    render() {
+        const data = this.props.data;
+        return (
+            <li className="grid__item">
+                <a className="grid__link" href={data.link}>
+                    <img className="grid__img layer" src="../img/events/canvas.png" alt="Canvas Dummy" />
+                    <img className="grid__img layer" src="../img/events/wireframe.png" alt="Wireframe Dummy" />
+                    <img className="grid__img layer" src={data.image} alt="01" />
+                    <span className="grid__title">{data.title}</span>
+                </a>
+            </li>
+        );
+    }
+}
 class Events extends React.Component {
     constructor(props) {
         super(props);
-    }
-
     }
 
     componentDidMount() {
@@ -82,10 +99,33 @@ class Events extends React.Component {
     }
 
     render() {
+
+        const sports_data = [
+            {
+                link: 'https://dribbble.com/forefathers',
+                image: '../img/events/Dribbble1/1.jpg',
+                title: 'Forefathers',
+            },
+        ];
+
+        const display_sports = sports_data.map((sport, index) => {
+                                    return <Sport data={sport} key={index}/>;
+                                });
+
         return(
             <div>
                 <div ref={(input) => this.scriptDiv = input} />
                 <p>Events</p>
+                <div className="include-deps">
+                    <link rel="stylesheet" type="text/css" href="../css/events/normalize.css" />
+                    <link rel="stylesheet" type="text/css" href="../css/events/demo.css" />
+                    <link rel="stylesheet" type="text/css" href="../css/events/component.css" />
+                    <div className="isolayer isolayer--scroll1 isolayer--shadow">
+                        <ul className="grid grid--effect-flip">
+                            {display_sports}
+                        </ul>
+                    </div>
+                </div>
             </div>
         );
     }
