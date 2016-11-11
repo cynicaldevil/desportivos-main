@@ -104,6 +104,31 @@ class Events extends React.Component {
                 image: '../img/events/Dribbble1/1.jpg',
                 title: 'Forefathers',
             },
+            {
+                link: 'https://dribbble.com/JulienLavallee',
+                image: '../img/events/Dribbble1/2_1.jpg',
+                title: 'Julien Lavallee',
+            },
+            {
+                link: 'https://dribbble.com/creativemints',
+                image: '../img/events/Dribbble1/3.jpg',
+                title: 'Mike | Creative Mints',
+            },
+            {
+                link: 'https://dribbble.com/Radium',
+                image: '../img/events/Dribbble1/4_2.jpg',
+                title: 'Cosmin Capitanu',
+            },
+            {
+                link: 'https://dribbble.com/forefathers',
+                image: '../img/events/Dribbble1/1_1.jpg',
+                title: 'Forefathers',
+            },
+            {
+                link: 'https://dribbble.com/forefathers',
+                image: '../img/events/Dribbble1/2.jpg',
+                title: 'Julien Lavallee',
+            }
         ];
 
         const display_sports = sports_data.map((sport, index) => {
