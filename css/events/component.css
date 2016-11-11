@@ -14,9 +14,9 @@ body {
 	transform-origin: 50% 100%;
 }
 
-.js .grid,
-.js .grid__item,
-.js .grid__link {
+.grid,
+.grid__item,
+.grid__link {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
@@ -32,7 +32,7 @@ body {
 	width: 300px;
 }
 
-.js .grid__item {
+.grid__item {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -284,11 +284,11 @@ body {
 
 /* Flip effect for the scrollable grid */
 
-.js .grid--effect-flip .grid__item {
+.grid--effect-flip .grid__item {
 	opacity: 0;
 }
 
-.js .grid--effect-flip .grid__item.shown {
+.grid--effect-flip .grid__item.shown {
 	opacity: 1;
 }
 

@@ -12,7 +12,7 @@ class Sport extends React.Component {
         const styles = {
             main: {
                 ':hover': {
-                    border: '2px solid black'
+                    border: '2px solid #D8D8D8'
                 }
             }
         };
