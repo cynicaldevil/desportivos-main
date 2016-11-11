@@ -1,14 +1,24 @@
 import React from 'react';
+import Radium from 'radium';
 
+@Radium
 class Sport extends React.Component {
     constructor(props) {
         super(props) ;
     }
 
     render() {
+
+        const styles = {
+            main: {
+                ':hover': {
+                    border: '2px solid black'
+                }
+            }
+        };
         const data = this.props.data;
         return (
-            <li className="grid__item">
+            <li className="grid__item" style={styles.main}>
                 <a className="grid__link" href={data.link}>
                     <img className="grid__img layer" src="../img/events/canvas.png" alt="Canvas Dummy" />
                     <img className="grid__img layer" src="../img/events/wireframe.png" alt="Wireframe Dummy" />
