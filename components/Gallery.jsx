@@ -110,9 +110,65 @@ class Gallery extends React.Component {
     }
 
     render() {
+
+        const images_data = [
+            {
+                dimensions: '1280x853',
+                image: '../img/gallery/original/1.jpg',
+                thumb: '../img/gallery/thumbs/1.jpg',
+                alt: '01',
+            },
+            {
+                dimensions: '958x1280',
+                image: '../img/gallery/original/2.jpg',
+                thumb: '../img/gallery/thumbs/2.jpg',
+                alt: '02',
+            },
+            {
+                dimensions: '837x1280',
+                image: '../img/gallery/original/3.jpg',
+                thumb: '../img/gallery/thumbs/3.jpg',
+                alt: '03',
+            },
+            {
+                dimensions: '1280x961',
+                image: '../img/gallery/original/4.jpg',
+                thumb: '../img/gallery/thumbs/4.jpg',
+                alt: '04',
+            },
+            {
+                dimensions: '1280x1131',
+                image: '../img/gallery/original/5.jpg',
+                thumb: '../img/gallery/thumbs/5.jpg',
+                alt: '05',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/6.jpg',
+                thumb: '../img/gallery/thumbs/6.jpg',
+                alt: '06',
+            }
+        ];
+
+        const display_images = images_data.map((image, index) => {
+                                    return <Image data={image} key={index}/>;
+                                });
+
         return(
             <div>
-                <p>Gallery</p>
+                <div ref={(input) => this.scriptDiv = input} />
+                <link rel="stylesheet" type="text/css" href="../css/gallery/font-awesome.css" />
+                <div className="container">
+                    <div className="content">
+                    <div className="grid">
+                        {display_images}
+                    </div>
+                    <div className="preview">
+                        <button className="action action--close"><i className="fa fa-times"></i><span className="text-hidden">Close</span></button>
+                        <div className="description description--preview"></div>
+                    </div>
+                    </div>
+                </div>
             </div>
         );
     }
