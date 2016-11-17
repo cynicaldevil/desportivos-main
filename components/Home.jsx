@@ -99,33 +99,48 @@ class Home extends React.Component {
                 <div style={styles.honeycomb}>
                     <div style={styles.row}>
                         <Hexagon length={length}/>
-                        <Hexagon length={length} customStyles={{hexagon_wrapper: {
-                            marginLeft: 0.70 * length
-                        }}} />
+                        <Hexagon length={length}
+                                 customStyles={{
+                                    hexagon_wrapper: {
+                                        marginLeft: 0.70 * length
+                                    }
+                                 }} />
                     </div>
                     <div style={{...styles.row,
                                     marginTop: -length * .56
                                 }}>
-                        <Hexagon length={length} customStyles={{hexagon_wrapper: {
-                            marginLeft: 1.0 * length
-                        }}} />
-                        <Hexagon length={length} customStyles={{hexagon_wrapper: {
-                            marginLeft: 0.7 * length
-                        }}} />
+                        <Hexagon length={length}
+                                 customStyles={{
+                                    hexagon_wrapper: {
+                                        marginLeft: 1.0 * length
+                                    }
+                                 }} />
+                        <Hexagon length={length}
+                                 customStyles={{
+                                    hexagon_wrapper: {
+                                        marginLeft: 0.7 * length
+                                    }
+                                 }} />
                     </div>
                     <div style={{...styles.row,
                                     marginTop: -length * .56
                                 }}>
-                        <Hexagon length={length} customStyles={{hexagon_wrapper: {
-                            marginLeft: 1.9 * length
-                        }}} />
+                        <Hexagon length={length}
+                                 customStyles={{
+                                    hexagon_wrapper: {
+                                        marginLeft: 1.9 * length
+                                    }
+                                 }} />
                     </div>
                     <div style={{...styles.row,
                                     marginTop: -length * .56
                                 }}>
-                        <Hexagon length={length} customStyles={{hexagon_wrapper: {
-                            marginLeft: 1.0 * length
-                        }}} />
+                        <Hexagon length={length}
+                                customStyles={{
+                                    hexagon_wrapper: {
+                                        marginLeft: 1.0 * length
+                                    }
+                                }} />
                     </div>
                 </div>
             </div>
