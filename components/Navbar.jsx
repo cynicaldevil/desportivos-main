@@ -8,7 +8,6 @@ class Navbar extends React.Component {
     }
     render() {
         return(
-            <div>
                 <header className="header-main">
                 <div className="row">
                   <nav className="nav-2">
@@ -24,8 +23,6 @@ class Navbar extends React.Component {
                     </nav>
                 </div>
                 </header>
-                <div style={{marginTop: 100}} />
-            </div>
         );
     }
 }

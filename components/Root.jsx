@@ -10,7 +10,9 @@ class Root extends React.Component {
         return(
             <div style={{border: '1px solid black'}} >
             <Navbar />
-            {this.props.children}
+            <div style={{marginTop: 94}}>
+                {this.props.children}
+            </div>
             </div>
         );
     }
