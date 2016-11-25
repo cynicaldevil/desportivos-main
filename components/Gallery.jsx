@@ -155,7 +155,7 @@ class Gallery extends React.Component {
                                 });
 
         return(
-            <div>
+            <div className="gallery-div">
                 <div ref={(input) => this.scriptDiv = input} />
                 <link rel="stylesheet" type="text/css" href="../css/gallery/font-awesome.css" />
                 <div className="container">

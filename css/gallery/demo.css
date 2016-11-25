@@ -31,7 +31,7 @@
     clear: both;
 }
 
-body {
+.gallery-div {
     font-family: "Avenir Next", Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
     color: #fff;
     background: #252323;

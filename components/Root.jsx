@@ -8,7 +8,7 @@ class Root extends React.Component {
     }
     render() {
         return(
-            <div style={{height: 700}} >
+            <div style={{border: '1px solid black'}} >
             <Navbar />
             {this.props.children}
             </div>
