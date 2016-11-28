@@ -1,14 +1,15 @@
 import React from 'react';
 
-require('../css/contacts/contacts.css');
+import styles from '../css/contacts/contacts.css';
 
 class Contact extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
+        console.log(styles);
         return (
-            <div className="grid">
+            <div className="contactsGrid">
                 {/* TODO: Move this link tag to another page */}
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
                 <figure className="effect-zoe">

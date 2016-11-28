@@ -27,7 +27,7 @@ section {
 }
 
 
-.grid {
+.contactsGrid {
     position: relative;
     margin: 0 auto;
     padding: 1em 0 4em;
@@ -37,7 +37,7 @@ section {
 }
 
 /* Common style */
-.grid figure {
+.contactsGrid figure {
     position: relative;
     float: left;
     overflow: hidden;
@@ -51,7 +51,7 @@ section {
     cursor: pointer;
 }
 
-.grid figure img {
+.contactsGrid figure img {
     position: relative;
     display: block;
     min-height: 100%;
@@ -59,13 +59,13 @@ section {
     opacity: 0.8;
 }
 
-.grid figure figcaption::before,
-.grid figure figcaption::after {
+.contactsGrid figure figcaption::before,
+.contactsGrid figure figcaption::after {
     pointer-events: none;
 }
 
-.grid figure figcaption,
-.grid figure figcaption > a {
+.contactsGrid figure figcaption,
+.contactsGrid figure figcaption > a {
     position: absolute;
     top: 0;
     left: 0;
@@ -75,7 +75,7 @@ section {
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.grid figure figcaption > a {
+.contactsGrid figure figcaption > a {
     z-index: 1000;
     text-indent: 200%;
     white-space: nowrap;
@@ -83,21 +83,21 @@ section {
     opacity: 0;
 }
 
-.grid figure h2 {
+.contactsGrid figure h2 {
     word-spacing: -0.15em;
     font-weight: 300;
 }
 
-.grid figure h2 span {
+.contactsGrid figure h2 span {
     font-weight: 800;
 }
 
-.grid figure h2,
-.grid figure p {
+.contactsGrid figure h2,
+.contactsGrid figure p {
     margin: 0;
 }
 
-.grid figure p {
+.contactsGrid figure p {
     letter-spacing: 1px;
     font-size: 68.5%;
 }
@@ -210,7 +210,7 @@ figure.effect-zoe:hover p.icon-links a:first-child {
         padding: 0 10px;
         text-align: center;
     }
-    .grid figure {
+    .contactsGrid figure {
         display: inline-block;
         float: none;
         margin: 10px auto;
