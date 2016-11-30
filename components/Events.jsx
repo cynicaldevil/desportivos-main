@@ -29,6 +29,21 @@ class Sport extends React.Component {
         );
     }
 }
+
+class SportsDataPanel extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div style={{position: 'fixed'}}>
+                <p>{this.props.data}</p>
+            </div>
+        );
+    }
+}
+
 class Events extends React.Component {
     constructor(props) {
         super(props);
