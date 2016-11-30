@@ -1,3 +1,7 @@
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+
 module.exports = {
     context: __dirname,
     entry: {
@@ -5,8 +9,7 @@ module.exports = {
     },
     output: {
         path: __dirname + 'dist/assets',
-        filename: '[name].bundle.js',
-        publicPath: '/assets'
+        filename: '[hash].[name].js',
     },
     devServer: {
         contentBase: __dirname,
@@ -31,6 +34,16 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Desportivos',
+            template: path.join(__dirname, 'index.html'),
+            inject: 'body'
+        })
+    ],
     resolve: {
         extensions: ['*', '.js', '.jsx']
     }

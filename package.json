@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/.bin/webpack --progress --profile --colors",
     "dev": "./node_modules/.bin/webpack-dev-server --progress --profile",
-    "start": "npm run dev"
+    "start": "NODE_ENV=development npm run dev"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-3": "^6.17.0",
     "css-loader": "^0.25.0",
+    "html-webpack-plugin": "^2.24.1",
     "radium": "^0.18.1",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.6",
