@@ -19,12 +19,12 @@ class Sport extends React.Component {
         const data = this.props.data;
         return (
             <li className="grid__item" style={styles.main}>
-                <a className="grid__link" href={data.link}>
+                <div className="grid__link">
                     <img className="grid__img layer" src="../img/events/canvas.png" alt="Canvas Dummy" />
                     <img className="grid__img layer" src="../img/events/wireframe.png" alt="Wireframe Dummy" />
                     <img className="grid__img layer" src={data.image} alt="01" />
                     <span className="grid__title">{data.title}</span>
-                </a>
+                </div>
             </li>
         );
     }

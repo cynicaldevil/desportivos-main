@@ -221,7 +221,7 @@
 
 	IsoGrid.prototype._expandSubItems = function(item) {
 		var self = this,
-			itemLink = item.querySelector('a'),
+			itemLink = item.querySelector('div'),
 			subItems = [].slice.call(itemLink.querySelectorAll('.layer')), 
 			subItemsTotal = subItems.length;
 
@@ -234,7 +234,7 @@
 	};
 
 	IsoGrid.prototype._collapseSubItems = function(item) {
-		var itemLink = item.querySelector('a');
+		var itemLink = item.querySelector('div');
 		[].slice.call(itemLink.querySelectorAll('.layer')).forEach(function(subitem, pos) {
 			dynamics.stop(subitem);
 			dynamics.animate(subitem, {
