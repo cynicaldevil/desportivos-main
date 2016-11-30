@@ -12,18 +12,18 @@ class Sport extends React.Component {
         const styles = {
             main: {
                 ':hover': {
-                    border: '2px solid #D8D8D8'
+                    border: '2px solid #D8D8D8',
+                    cursor: 'pointer'
                 }
             }
         };
-        const data = this.props.data;
         return (
             <li className="grid__item" style={styles.main}>
-                <div className="grid__link">
+                <div className="grid__link" onClick={() => this.props.onClickCB(this.props.name) }>
                     <img className="grid__img layer" src="../img/events/canvas.png" alt="Canvas Dummy" />
                     <img className="grid__img layer" src="../img/events/wireframe.png" alt="Wireframe Dummy" />
-                    <img className="grid__img layer" src={data.image} alt="01" />
-                    <span className="grid__title">{data.title}</span>
+                    <img className="grid__img layer" src={this.props.image} alt="01" />
+                    <span className="grid__title">{this.props.name}</span>
                 </div>
             </li>
         );
@@ -47,11 +47,16 @@ class SportsDataPanel extends React.Component {
 class Events extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            panel_is_visible: false,
+            panel_data: null
+        };
+
         this.sports_data = new Map([
             ["badminton",
             {
                 rules: "two or four player games",
-                image: '../img/events/Dribbble1/football.png',
+                image: '../img/events/Dribbble1/1.jpg',
             }
             ],
             ["cricket",
@@ -159,14 +164,23 @@ class Events extends React.Component {
         }, 3000);
     }
 
+    onSportClick = (sport) => {
+        const data = this.sports_data.get(sport);
+        this.setState({
+            panel_is_visible: true,
+            panel_data: data.rules
+        });
+    }
+
     render() {
 
         const display_sports = [...this.sports_data].map((sport_, index) => {
-            const sport = {
-                name: sport_[0],
-                image: sport_[1].image
-            };
-            return <Sport data={sport} key={index} />;
+            return <Sport
+                       name={sport_[0]}
+                       image={sport_[1].image}
+                       key={index}
+                       onClickCB={this.onSportClick}
+                    />;
         });
 
         return(
@@ -177,6 +191,7 @@ class Events extends React.Component {
                     <link rel="stylesheet" type="text/css" href="../css/events/normalize.css" />
                     <link rel="stylesheet" type="text/css" href="../css/events/demo.css" />
                     <link rel="stylesheet" type="text/css" href="../css/events/component.css" />
+                    {this.state.panel_is_visible && <SportsDataPanel data={this.state.panel_data} />}
                     <div className="isolayer isolayer--scroll1 isolayer--shadow">
                         <ul className="grid grid--effect-flip">
                             {display_sports}
