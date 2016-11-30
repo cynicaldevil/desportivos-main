@@ -32,6 +32,44 @@ class Sport extends React.Component {
 class Events extends React.Component {
     constructor(props) {
         super(props);
+        this.sports_data = new Map([
+            ["badminton",
+            {
+                rules: "two or four player games",
+                image: '../img/events/Dribbble1/football.png',
+            }
+            ],
+            ["cricket",
+            {
+                rules: "eleven players",
+                image: '../img/events/Dribbble1/2_1.jpg',
+            }
+            ],
+            ["tennis",
+            {
+                rules: "two or four player games",
+                image: '../img/events/Dribbble1/3.jpg',
+            }
+            ],
+            ["basketball",
+            {
+                rules: "seven player games",
+                image: '../img/events/Dribbble1/4_2.jpg',
+            }
+            ],
+            ["football",
+            {
+                rules: "eleven player games",
+                image: '../img/events/Dribbble1/1_1.jpg',
+            }
+            ],
+            ["volleyball",
+            {
+                rules: "seven player games",
+                image: '../img/events/Dribbble1/2.jpg',
+            }
+            ]
+        ]);
     }
 
     componentDidMount() {
@@ -108,42 +146,13 @@ class Events extends React.Component {
 
     render() {
 
-        const sports_data = [
-            {
-                link: 'https://dribbble.com/forefathers',
-                image: '../img/events/Dribbble1/1.jpg',
-                title: 'Forefathers',
-            },
-            {
-                link: 'https://dribbble.com/JulienLavallee',
-                image: '../img/events/Dribbble1/2_1.jpg',
-                title: 'Julien Lavallee',
-            },
-            {
-                link: 'https://dribbble.com/creativemints',
-                image: '../img/events/Dribbble1/3.jpg',
-                title: 'Mike | Creative Mints',
-            },
-            {
-                link: 'https://dribbble.com/Radium',
-                image: '../img/events/Dribbble1/4_2.jpg',
-                title: 'Cosmin Capitanu',
-            },
-            {
-                link: 'https://dribbble.com/forefathers',
-                image: '../img/events/Dribbble1/1_1.jpg',
-                title: 'Forefathers',
-            },
-            {
-                link: 'https://dribbble.com/forefathers',
-                image: '../img/events/Dribbble1/2.jpg',
-                title: 'Julien Lavallee',
-            }
-        ];
-
-        const display_sports = sports_data.map((sport, index) => {
-                                    return <Sport data={sport} key={index}/>;
-                                });
+        const display_sports = [...this.sports_data].map((sport_, index) => {
+            const sport = {
+                name: sport_[0],
+                image: sport_[1].image
+            };
+            return <Sport data={sport} key={index} />;
+        });
 
         return(
             <div>
