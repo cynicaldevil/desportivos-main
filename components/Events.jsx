@@ -138,7 +138,6 @@ class Events extends React.Component {
                             }
                         },
                         onGridLoaded : function() {
-                            classie.add(document.body, 'grid-loaded');
                         }
                     });
                 });

@@ -358,8 +358,3 @@ body {
 		transform: rotate(360deg);
 	}
 }
-
-
-.js body.grid-loaded::after {
-	opacity: 0;
-}
