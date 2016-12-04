@@ -1,6 +1,9 @@
 import React from 'react';
 import Radium from 'radium';
 
+import { Modal, Button } from 'react-bootstrap/lib';
+require('../css/bootstrap/bootstrap.min.css');
+
 @Radium
 class Sport extends React.Component {
     constructor(props) {
@@ -12,7 +15,7 @@ class Sport extends React.Component {
         const styles = {
             main: {
                 ':hover': {
-                    border: '2px solid #D8D8D8',
+                    border: '4px solid #D8D8D8',
                     cursor: 'pointer'
                 }
             }
@@ -31,17 +34,53 @@ class Sport extends React.Component {
 }
 
 class SportsDataPanel extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+        this.state = {
+            showModal: true
+        };
+  }
 
-    render() {
-        return (
-            <div style={{position: 'fixed'}}>
-                <p>{this.props.data}</p>
-            </div>
-        );
-    }
+  close = () => {
+    this.setState({ showModal: false });
+    this.props.onModalCloseCB(false);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ showModal: true });
+  }
+
+  render() {
+    return (
+      <div>
+
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Text in a modal</h4>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+            <hr />
+
+            <h4>Overflowing text to show scroll behavior</h4>
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    );
+  }
 }
 
 class Events extends React.Component {
@@ -171,6 +210,12 @@ class Events extends React.Component {
         });
     }
 
+    onModalCloseCB = (isOpen) => {
+        this.setState({
+            panel_is_visible: isOpen
+        });
+    }
+
     render() {
 
         const display_sports = [...this.sports_data].map((sport_, index) => {
@@ -183,14 +228,16 @@ class Events extends React.Component {
         });
 
         return(
-            <div>
+            <div style={{backgroundColor: 'yellow'}}>
                 <div ref={(input) => this.scriptDiv = input} />
-                <p>Events</p>
                 <div className="include-deps">
                     <link rel="stylesheet" type="text/css" href="../css/events/normalize.css" />
                     <link rel="stylesheet" type="text/css" href="../css/events/demo.css" />
                     <link rel="stylesheet" type="text/css" href="../css/events/component.css" />
-                    {this.state.panel_is_visible && <SportsDataPanel data={this.state.panel_data} />}
+                    {this.state.panel_is_visible && <SportsDataPanel
+                                                        data={this.state.panel_data}
+                                                        onModalCloseCB={this.onModalCloseCB}
+                                                    />}
                     <div className="isolayer isolayer--scroll1 isolayer--shadow">
                         <ul className="grid grid--effect-flip">
                             {display_sports}
