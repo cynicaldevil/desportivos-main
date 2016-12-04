@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/.bin/webpack --progress --profile --colors",
+    "markup": "./node_modules/.bin/webpack --progress --profile --colors --config webpack.markup.config.js",
     "dev": "./node_modules/.bin/webpack-dev-server --progress --profile",
     "start": "NODE_ENV=development npm run dev"
   },
