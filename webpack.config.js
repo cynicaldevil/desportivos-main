@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -30,7 +31,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"],
+                exclude: /node_modules/,
+                loader: ExtractTextPlugin.extract({
+                    loader: 'css-loader?sourceMap'
+                })
             }
         ]
     },
@@ -42,7 +46,8 @@ module.exports = {
             title: 'Desportivos',
             template: path.join(__dirname, 'index.html'),
             inject: 'body'
-        })
+        }),
+        new ExtractTextPlugin({ filename: '[name].[chunkhash].css', disable: false, allChunks: true })
     ],
     resolve: {
         extensions: ['*', '.js', '.jsx']
