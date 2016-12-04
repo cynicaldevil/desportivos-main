@@ -2,7 +2,6 @@ import React from 'react';
 import Radium from 'radium';
 
 import { Modal, Button } from 'react-bootstrap/lib';
-require('../css/bootstrap/bootstrap.min.css');
 
 @Radium
 class Sport extends React.Component {
@@ -234,6 +233,7 @@ class Events extends React.Component {
                     <link rel="stylesheet" type="text/css" href="../css/events/normalize.css" />
                     <link rel="stylesheet" type="text/css" href="../css/events/demo.css" />
                     <link rel="stylesheet" type="text/css" href="../css/events/component.css" />
+                    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css" />
                     {this.state.panel_is_visible && <SportsDataPanel
                                                         data={this.state.panel_data}
                                                         onModalCloseCB={this.onModalCloseCB}
