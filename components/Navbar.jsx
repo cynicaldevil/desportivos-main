@@ -9,7 +9,7 @@ class Navbar extends React.Component {
     render() {
         return(
                 <header className="header-main">
-                <div className="row">
+                <div className="navbar-row">
                   <nav className="nav-2">
                   <ul id="navigation">
                         <li><Link to="/">Home</Link></li>

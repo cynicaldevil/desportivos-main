@@ -7,10 +7,10 @@ div,ul,li,header,nav {
     vertical-align: baseline
 }
 
-.row {
+.navbar-row {
     *zoom:1}
 
-.row:after {
+.navbar-row:after {
     content: "";
     display: table;
     clear: both
@@ -48,30 +48,30 @@ a:hover {
     text-shadow: none
 }
 
-.row {
+.navbar-row {
     max-width: 1700px;
     margin: 0 auto
 }
 
 @media screen and (max-width: 1700px) {
-    .row {
+    .navbar-row {
         margin:0 40px
     }
 }
 
 @media screen and (max-width: 640px) {
-    .row {
+    .navbar-row {
         margin:0
     }
 }
 
-.row>.btn--2 {
+.navbar-row>.btn--2 {
     float: right;
     margin-top: 167px
 }
 
 @media screen and (max-width: 640px) {
-    .row>.btn--2 {
+    .navbar-row>.btn--2 {
         margin:0 auto 35px;
         display: block;
         float: none;
