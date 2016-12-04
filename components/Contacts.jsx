@@ -7,7 +7,6 @@ class Contact extends React.Component {
         super(props);
     }
     render() {
-        console.log(styles);
         return (
             <div className="contactsGrid">
                 {/* TODO: Move this link tag to another page */}
