@@ -15,7 +15,7 @@ class Navbar extends React.Component {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About us</Link></li>
                         <li><Link to="/events">Events</Link></li>
-                        <li><Link to="/sponsors">Sponsors</Link></li>
+                        <li><Link to="/reach-us">Reach Us</Link></li>
                         <li><Link to="/register">Register</Link></li>
                         <li><Link to="/gallery">Gallery</Link></li>
                         <li><Link to="/contact-us">Contact Us</Link></li>

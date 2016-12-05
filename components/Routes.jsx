@@ -5,7 +5,7 @@ import Root from './Root';
 import Home from './Home';
 import About from './About';
 import Events from './Events';
-import Sponsors from './Sponsors';
+import ReachUs from './ReachUs';
 import Contacts from './Contacts';
 import Gallery from './Gallery';
 import Register from './Register';
@@ -16,7 +16,7 @@ export default (
             <IndexRoute component={Home} />
             <Route path="about" component={About}/>
             <Route path="events" component={Events} />
-            <Route path="sponsors" component={Sponsors} />
+            <Route path="reach-us" component={ReachUs} />
             <Route path="register" component={Register} />
             <Route path="gallery" component={Gallery} />
             <Route path="contact-us" component={Contacts} />
