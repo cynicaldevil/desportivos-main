@@ -6,6 +6,19 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = (event) => {
+        // console.log(event.srcElement.body.scrollTop);
+    }
+
     render() {
         return(
                 <header className="header-main">
