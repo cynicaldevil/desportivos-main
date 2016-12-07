@@ -22,8 +22,8 @@ class Sport extends React.Component {
         return (
             <li className="grid__item" style={styles.main}>
                 <div className="grid__link" onClick={() => this.props.onClickCB(this.props.name) }>
-                    <img className="grid__img layer" src="../img/events/canvas.png" alt="Canvas Dummy" />
-                    <img className="grid__img layer" src="../img/events/wireframe.png" alt="Wireframe Dummy" />
+                    <img className="grid__img layer" src="../img/events/back_1.png" alt="Canvas Dummy" />
+                    <img className="grid__img layer" src="../img/events/back_2.png" alt="Dummy" />
                     <img className="grid__img layer" src={this.props.image} alt="01" />
                     <span className="grid__title">{this.props.name}</span>
                 </div>
@@ -91,42 +91,114 @@ class Events extends React.Component {
         };
 
         this.sports_data = new Map([
-            ["badminton",
+            ["basketball",
             {
                 rules: "two or four player games",
-                image: '../img/events/Dribbble1/1.jpg',
+                image: '../img/events/1.png',
+            }
+            ],
+            ["badminton",
+            {
+                rules: "eleven players",
+                image: '../img/events/2.png',
+            }
+            ],
+            ["boxing",
+            {
+                rules: "two or four player games",
+                image: '../img/events/3.png',
+            }
+            ],
+            ["kabaddi",
+            {
+                rules: "eleven player games",
+                image: '../img/events/4.png',
             }
             ],
             ["cricket",
             {
-                rules: "eleven players",
-                image: '../img/events/Dribbble1/2_1.jpg',
-            }
-            ],
-            ["tennis",
-            {
-                rules: "two or four player games",
-                image: '../img/events/Dribbble1/3.jpg',
-            }
-            ],
-            ["basketball",
-            {
                 rules: "seven player games",
-                image: '../img/events/Dribbble1/4_2.jpg',
+                image: '../img/events/5.png',
             }
             ],
             ["football",
             {
-                rules: "eleven player games",
-                image: '../img/events/Dribbble1/1_1.jpg',
+                rules: "seven player games",
+                image: '../img/events/6.png',
+            }
+            ],
+            ["table_tennis",
+            {
+                rules: "seven player games",
+                image: '../img/events/7.png',
             }
             ],
             ["volleyball",
             {
                 rules: "seven player games",
-                image: '../img/events/Dribbble1/2.jpg',
+                image: '../img/events/8.png',
             }
-            ]
+            ],
+            ["lawn_tennis",
+            {
+                rules: "seven player games",
+                image: '../img/events/9.png',
+            }
+            ],
+            ["taekwondo",
+            {
+                rules: "seven player games",
+                image: '../img/events/10.png',
+            }
+            ],
+            ["squash",
+            {
+                rules: "seven player games",
+                image: '../img/events/11.png',
+            }
+            ],
+            ["karate",
+            {
+                rules: "seven player games",
+                image: '../img/events/12.png',
+            }
+            ],
+            ["kho_kho",
+            {
+                rules: "seven player games",
+                image: '../img/events/13.png',
+            }
+            ],
+            ["kick_boxing",
+            {
+                rules: "seven player games",
+                image: '../img/events/14.png',
+            }
+            ],
+            ["five_a_side_football",
+            {
+                rules: "seven player games",
+                image: '../img/events/15.png',
+            }
+            ],
+            ["chess",
+            {
+                rules: "seven player games",
+                image: '../img/events/16.png',
+            }
+            ],
+            ["lan_gaming",
+            {
+                rules: "seven player games",
+                image: '../img/events/17.png',
+            }
+            ],
+            ["carrom",
+            {
+                rules: "seven player games",
+                image: '../img/events/18.png',
+            }
+            ],
         ]);
     }
 
