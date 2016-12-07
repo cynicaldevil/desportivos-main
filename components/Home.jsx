@@ -1,6 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import { Button } from 'react-bootstrap';
+import Particles from 'react-particles-js';
 
 class Hexagon extends React.Component {
     constructor(props) {
@@ -111,7 +112,8 @@ class Home extends React.Component {
         };
         const length = 120;
         return (
-            <div style={{backgroundColor: '#ecf0f1', height: '100%'}}>
+            <div style={{}}>
+                <Particles style={{position: 'absolute', top: 0, left: 0}}/>
                 <div style={styles.honeycomb}>
                     <div style={styles.row}>
                         <Hexagon length={length}
