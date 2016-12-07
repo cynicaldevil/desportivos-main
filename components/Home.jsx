@@ -147,8 +147,8 @@ class Home extends React.Component {
                                  }} />
                         <Hexagon length={length}
                                  link={{
-                                    text: 'Sponsors',
-                                    target: '/sponsors'
+                                    text: 'Reach Us',
+                                    target: '/reach-us'
                                  }}
                                  customStyles={{
                                     hexagon_wrapper: {
