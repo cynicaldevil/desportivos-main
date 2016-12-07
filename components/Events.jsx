@@ -299,7 +299,7 @@ class Events extends React.Component {
         });
 
         return(
-            <div style={{backgroundColor: '#CAFF25'}}>
+            <div style={{backgroundColor: '#CAFF25', paddingTop: 94}}>
                 <div ref={(input) => this.scriptDiv = input} />
                 <div className="include-deps">
                     <link rel="stylesheet" type="text/css" href="../css/events/normalize.css" />

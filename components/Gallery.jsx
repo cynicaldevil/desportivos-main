@@ -155,7 +155,7 @@ class Gallery extends React.Component {
                                 });
 
         return(
-            <div className="gallery-div">
+            <div className="gallery-div" style={{paddingTop: 94}}>
                 <div ref={(input) => this.scriptDiv = input} />
                 <link rel="stylesheet" type="text/css" href="../css/gallery/font-awesome.css" />
                 <div className="container">

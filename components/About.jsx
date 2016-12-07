@@ -6,7 +6,7 @@ class About extends React.Component {
     }
     render() {
         return(
-            <div>
+            <div style={{paddingTop: 94}}>
                 <p>About</p>
             </div>
         );

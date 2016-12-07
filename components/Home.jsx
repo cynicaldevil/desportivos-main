@@ -112,8 +112,8 @@ class Home extends React.Component {
         };
         const length = 120;
         return (
-            <div style={{}}>
                 <Particles style={{position: 'absolute', top: 0, left: 0}}/>
+            <div style={{paddingTop: 94}}>
                 <div style={styles.honeycomb}>
                     <div style={styles.row}>
                         <Hexagon length={length}

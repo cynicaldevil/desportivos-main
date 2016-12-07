@@ -6,7 +6,7 @@ class Register extends React.Component {
     }
     render() {
         return(
-            <div>
+            <div style={{paddingTop: 94}}>
                 <p>Register</p>
             </div>
         );

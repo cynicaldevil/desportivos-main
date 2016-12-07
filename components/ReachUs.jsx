@@ -27,7 +27,7 @@ class ReachUs extends React.Component {
                         </iframe>
                         `;
         return(
-            <div>
+            <div style={{paddingTop: 94}}>
                 <p>Reach Us</p>
                 <div dangerouslySetInnerHTML={{__html: iframe}} />
             </div>
