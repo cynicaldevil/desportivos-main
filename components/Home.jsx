@@ -29,13 +29,14 @@ class Hexagon extends React.Component {
                 display: 'inline-block',
                 backgroundColor: '#556474',
                 transform: 'rotateZ(90deg)',
+                backgroundColor: '#FFC425',
             },
             inner_hexagon: {
                 height: '100%',
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'space-around',
-                alignItems: 'center'
+                alignItems: 'center',
             },
             hexagon_before: {
                 position: 'absolute',
@@ -45,7 +46,8 @@ class Hexagon extends React.Component {
                 height: 'inherit',
                 width: (100 * 0.57735) + '%',
                 content: '',
-                transform: 'rotateZ(30deg)'
+                transform: 'rotateZ(30deg)',
+                backgroundColor: '#FFC425',
             },
             hexagon_after: {
                 position: 'absolute',
@@ -106,21 +108,30 @@ const LogoDiv = () => {
         main: {
             display: 'flex',
             flexDirection: 'column',
-            border: '1px solid black',
-            color: 'black'
+            alignItems: 'center'
         },
         top: {
             logo: {
-                width: '70%',
+            },
+            title: {
+                fontFamily: 'daggerSquare-oblique',
+                fontSize: 45,
+                color: '#7F2429',
+                marginBottom: 20
+            },
+            text: {
+                fontFamily: 'daggerSquare',
+                fontSize: 20,
+                color: '#020737',
+                marginTop: 0
             }
         }
     };
     return(
         <div style={styles.main}>
-            <img style={styles.top.logo} src={'../img/home/desp-logo.png'} />
-            <p style={{fontFamily: 'daggerSquare-oblique'}}>Desportivos '17</p>
-            <p style={{fontFamily: 'daggerSquare'}}>Reinvent the champion in you!</p>
-            <p style={{fontFamily: 'daggerSquare'}}>20<sup>th</sup> - 22<sup>nd</sup> Jan 2017</p>
+            <img style={styles.top.logo} width="200" src={'../img/home/desp-logo.png'} />
+            <p style={styles.top.title}>Desportivos '17</p>
+            <p style={styles.top.text}>Reinvent the champion in you!</p>
         </div>
     );
 }
@@ -132,8 +143,9 @@ class Home extends React.Component {
     render() {
         const styles = {
             main: {
-                paddingTop: 94,
-                display: 'flex'
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start'
             },
             row: {
                 height: 130,
@@ -141,7 +153,7 @@ class Home extends React.Component {
                 alignItems: 'center',
             },
             honeycomb: {
-                marginLeft: '50%',
+                marginTop: 94
             },
             particles: {
                 position: 'absolute',
@@ -271,78 +283,87 @@ class Home extends React.Component {
                            style={styles.particles}
                            params={particles_config}
                 />
-                <LogoDiv />
-                <div style={styles.honeycomb}>
-                    <div style={styles.row}>
-                        <Hexagon length={length}
-                                 link={{
-                                    text: 'Contact us',
-                                    target: '/contact-us'
-                                 }} />
-                        <Hexagon length={length}
-                                 link={{
-                                    text: 'Events',
-                                    target: '/events'
-                                 }}
-                                 customStyles={{
-                                    hexagon_wrapper: {
-                                        marginLeft: 0.70 * length
-                                    }
-                                 }} />
-                    </div>
-                    <div style={{...styles.row,
-                                    marginTop: -length * .56
-                                }}>
-                        <Hexagon length={length}
-                                 link={{
-                                    text: 'About us',
-                                    target: '/about'
-                                 }}
-                                 customStyles={{
-                                    hexagon_wrapper: {
-                                        marginLeft: 1.0 * length
-                                    }
-                                 }} />
-                        <Hexagon length={length}
-                                 link={{
-                                    text: 'Reach Us',
-                                    target: '/reach-us'
-                                 }}
-                                 customStyles={{
-                                    hexagon_wrapper: {
-                                        marginLeft: 0.7 * length
-                                    }
-                                 }} />
-                    </div>
-                    <div style={{...styles.row,
-                                    marginTop: -length * .56
-                                }}>
-                        <Hexagon length={length}
-                                 link={{
-                                    text: 'Register',
-                                    target: '/register'
-                                 }}
-                                 customStyles={{
-                                    hexagon_wrapper: {
-                                        marginLeft: 1.9 * length
-                                    }
-                                 }} />
-                    </div>
-                    <div style={{...styles.row,
-                                    marginTop: -length * .56
-                                }}>
-                        <Hexagon length={length}
-                                 link={{
-                                    text: 'Gallery',
-                                    target: '/gallery'
-                                 }}
-                                customStyles={{
-                                    hexagon_wrapper: {
-                                        marginLeft: 1.0 * length
-                                    }
-                                }} />
+                <div style={{display: 'flex', justifyContent: 'space-around'}}>
+                    <LogoDiv />
+                    <div style={styles.honeycomb}>
+                        <div style={styles.row}>
+                            <Hexagon length={length}
+                                     link={{
+                                        text: 'Contact us',
+                                        target: '/contact-us'
+                                     }} />
+                            <Hexagon length={length}
+                                     link={{
+                                        text: 'Events',
+                                        target: '/events'
+                                     }}
+                                     customStyles={{
+                                        hexagon_wrapper: {
+                                            marginLeft: 0.70 * length
+                                        }
+                                     }} />
+                        </div>
+                        <div style={{...styles.row,
+                                        marginTop: -length * .56
+                                    }}>
+                            <Hexagon length={length}
+                                     link={{
+                                        text: 'About us',
+                                        target: '/about'
+                                     }}
+                                     customStyles={{
+                                        hexagon_wrapper: {
+                                            marginLeft: 1.0 * length
+                                        }
+                                     }} />
+                            <Hexagon length={length}
+                                     link={{
+                                        text: 'Reach Us',
+                                        target: '/reach-us'
+                                     }}
+                                     customStyles={{
+                                        hexagon_wrapper: {
+                                            marginLeft: 0.7 * length
+                                        }
+                                     }} />
+                        </div>
+                        <div style={{...styles.row,
+                                        marginTop: -length * .56
+                                    }}>
+                            <Hexagon length={length}
+                                     link={{
+                                        text: 'Register',
+                                        target: '/register'
+                                     }}
+                                     customStyles={{
+                                        hexagon_wrapper: {
+                                            marginLeft: 1.9 * length
+                                        }
+                                     }} />
+                        </div>
+                        <div style={{...styles.row,
+                                        marginTop: -length * .56
+                                    }}>
+                            <Hexagon length={length}
+                                     link={{
+                                        text: 'Gallery',
+                                        target: '/gallery'
+                                     }}
+                                    customStyles={{
+                                        hexagon_wrapper: {
+                                            marginLeft: 1.0 * length
+                                        }
+                                    }} />
+                        </div>
                     </div>
                 </div>
+                <p style={{
+                               fontFamily: 'daggerSquare',
+                               textAlign: 'center',
+                               fontSize: 50,
+                               color: '#020737',
+                               margin: 0,
+                           }}>20<sup>th</sup> - 22<sup>nd</sup> Jan 2017</p>
             </div>
         );
   }
