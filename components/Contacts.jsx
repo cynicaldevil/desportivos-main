@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styles from '../css/contacts/contacts.css';
-
 class Contact extends React.Component {
     constructor(props) {
         super(props);
@@ -9,8 +7,6 @@ class Contact extends React.Component {
     render() {
         return (
             <div className="contactsGrid">
-                {/* TODO: Move this link tag to another page */}
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
                 <figure className="effect-zoe">
                     <img src="../img/contacts/26.jpg" alt="img26"/>
                     <figcaption>
@@ -35,6 +31,8 @@ class Contacts extends React.Component {
     render() {
         return(
             <div style={{paddingTop: 94}}>
+                <link rel="stylesheet" type="text/css" href="../css/contacts/contacts.css" />
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
                 <Contact />
             </div>
         );

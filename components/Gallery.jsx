@@ -1,9 +1,5 @@
 import React from 'react';
 
-require('../css/gallery/normalize.css');
-require('../css/gallery/demo.css');
-require('../css/gallery/style.css');
-
 class Image extends React.Component {
     constructor(props) {
         super(props);
@@ -157,6 +153,9 @@ class Gallery extends React.Component {
         return(
             <div className="gallery-div" style={{paddingTop: 94}}>
                 <div ref={(input) => this.scriptDiv = input} />
+                <link rel="stylesheet" type="text/css" href="../css/gallery/normalize.css" />
+                <link rel="stylesheet" type="text/css" href="../css/gallery/demo.css" />
+                <link rel="stylesheet" type="text/css" href="../css/gallery/style.css" />
                 <link rel="stylesheet" type="text/css" href="../css/gallery/font-awesome.css" />
                 <div className="container">
                     <div className="content">
