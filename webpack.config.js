@@ -35,6 +35,11 @@ module.exports = {
                 loader: ExtractTextPlugin.extract({
                     loader: 'css-loader?sourceMap'
                 })
+            },
+            {
+                test: /\.otf$/,
+                exclude: /node_modules/,
+                loader: 'file-loader'
             }
         ]
     },

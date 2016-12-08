@@ -5,6 +5,8 @@ import Radium from 'radium';
 import { Button } from 'react-bootstrap';
 import Particles from 'react-particles-js';
 
+require('../css/home/styles.css');
+
 class Hexagon extends React.Component {
     constructor(props) {
         super(props);
@@ -116,9 +118,9 @@ const LogoDiv = () => {
     return(
         <div style={styles.main}>
             <img style={styles.top.logo} src={'../img/home/desp-logo.png'} />
-            <p>Desportivos '17</p>
-            <p style={{fontFamily: 'DaggerSquare'}}>Reinvent the champion in you!</p>
-            <p>20<sup>th</sup> - 22<sup>nd</sup> Jan 2017</p>
+            <p style={{fontFamily: 'daggerSquare-oblique'}}>Desportivos '17</p>
+            <p style={{fontFamily: 'daggerSquare'}}>Reinvent the champion in you!</p>
+            <p style={{fontFamily: 'daggerSquare'}}>20<sup>th</sup> - 22<sup>nd</sup> Jan 2017</p>
         </div>
     );
 }
