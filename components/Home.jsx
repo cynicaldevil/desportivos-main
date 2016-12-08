@@ -95,12 +95,40 @@ Hexagon.defaultProps = {
     }
 };
 
+const LogoDiv = () => {
+    const styles = {
+        main: {
+            display: 'flex',
+            flexDirection: 'column',
+            border: '1px solid black',
+            color: 'black'
+        },
+        top: {
+            logo: {
+                width: '70%',
+            }
+        }
+    };
+    return(
+        <div style={styles.main}>
+            <img style={styles.top.logo} src={'../img/home/desp-logo.png'} />
+            <p>Desportivos '17</p>
+            <p style={{fontFamily: 'DaggerSquare'}}>Reinvent the champion in you!</p>
+            <p>20<sup>th</sup> - 22<sup>nd</sup> Jan 2017</p>
+        </div>
+    );
+}
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         const styles = {
+            main: {
+                paddingTop: 94,
+                display: 'flex'
+            },
             row: {
                 height: 130,
                 display: 'flex',
@@ -116,7 +144,6 @@ class Home extends React.Component {
                 backgroundColor: '#ffe5b6',
                 zIndex: -1,
             },
-            }
         };
 
         const particles_config = {
@@ -232,12 +259,13 @@ class Home extends React.Component {
 
         const length = 120;
         return (
-            <div style={{paddingTop: 94}}>
+            <div style={styles.main}>
                 <Particles width={'100%'}
                            height={'100%'}
                            style={styles.particles}
                            params={particles_config}
                 />
+                <LogoDiv />
                 <div style={styles.honeycomb}>
                     <div style={styles.row}>
                         <Hexagon length={length}
