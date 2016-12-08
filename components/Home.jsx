@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router';
+
 import Radium from 'radium';
 import { Button } from 'react-bootstrap';
 import Particles from 'react-particles-js';
@@ -73,6 +75,7 @@ class Hexagon extends React.Component {
             }
         }
         return (
+            <Link to={this.props.link.target}>
             <div style={constructedStyles.hexagon_wrapper} >
                 <div style={constructedStyles.hexagon_before} />
                 <div style={constructedStyles.hexagon} >
@@ -82,6 +85,7 @@ class Hexagon extends React.Component {
                 </div>
                 <div style={constructedStyles.hexagon_after} />
             </div>
+            </Link>
         );
     }
 }
