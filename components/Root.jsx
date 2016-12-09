@@ -9,7 +9,7 @@ class Root extends React.Component {
     render() {
         return(
             <div>
-                {!(this.props.children.type.name === 'RadiumEnhancer') && <Navbar />}
+                {!(this.props.children.type.name === 'HomeContainer') && <Navbar />}
                 <div style={{height: '100%'}}>
                     {this.props.children}
                 </div>

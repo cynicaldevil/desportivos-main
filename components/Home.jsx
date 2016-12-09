@@ -136,6 +136,7 @@ const LogoDiv = () => {
     );
 }
 
+@Radium
 class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -369,4 +370,10 @@ class Home extends React.Component {
   }
 }
 
-export default Radium(Home);
+class HomeContainer extends React.Component {
+    render() {
+        return(<Home />);
+    }
+}
+
+export default HomeContainer;
