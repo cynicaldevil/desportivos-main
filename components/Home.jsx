@@ -5,7 +5,7 @@ import Radium from 'radium';
 import { Button } from 'react-bootstrap';
 import Particles from 'react-particles-js';
 
-require('../css/home/styles.css');
+require('../css/fonts.css');
 
 class Hexagon extends React.Component {
     constructor(props) {

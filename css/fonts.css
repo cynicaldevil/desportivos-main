@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+
+@font-face {
+    font-family: 'daggerSquare';
+    src: url('../fonts/DAGGERSQUARE.otf');
+}
+
+@font-face {
+    font-family: 'daggerSquare-oblique';
+    src: url('../fonts/DAGGERSQUARE_OBLIQUE.otf');
+}
