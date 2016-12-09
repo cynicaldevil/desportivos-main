@@ -95,43 +95,6 @@ a:hover {
     }
 }
 
-.header-main .close-helper {
-    float: left;
-    margin: 20px 40px 0 0;
-    display: none
-}
-
-.overflow--hidden .header-main .close-helper {
-    display: inline-block
-}
-
-@media screen and (max-width: 640px) {
-    .header-main .close-helper {
-        margin:0 auto;
-        width: 100%;
-        float: none;
-        text-align: center
-    }
-}
-
-.header-main .logo {
-    float: left;
-    margin: 20px 40px 0 0
-}
-
-.overflow--hidden .header-main .logo {
-    display: none
-}
-
-@media screen and (max-width: 640px) {
-    .header-main .logo {
-        margin:0 auto;
-        width: 100%;
-        float: none;
-        text-align: center
-    }
-}
-
 .header-main .nav-1 {
     float: right;
     margin: 25px 0 0 30px;
