@@ -9,18 +9,6 @@ class Navbar extends React.Component {
         super(props);
     }
 
-    componentDidMount = () => {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
-    componentWillUnmount = () => {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll = (event) => {
-        // console.log(event.srcElement.body.scrollTop);
-    }
-
     showNavbar = () => {
         if(!this.props.showNavbar) {
             return {
@@ -33,11 +21,17 @@ class Navbar extends React.Component {
     };
 
     render() {
+        const styles = {
+            ul: {
+                fontSize: 15,
+                letterSpacing: -1,
+            }
+        };
         return(
                 <header className="header-main" style={this.showNavbar()}>
                 <div className="navbar-row">
                   <nav className="nav-2">
-                  <ul id="navigation">
+                  <ul style={styles.ul} id="navigation">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/about">About us</Link></li>
                         <li><Link to="/events">Events</Link></li>

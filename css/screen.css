@@ -58,23 +58,9 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 740px) {
     .navbar-row {
         margin:0
-    }
-}
-
-.navbar-row>.btn--2 {
-    float: right;
-    margin-top: 167px
-}
-
-@media screen and (max-width: 640px) {
-    .navbar-row>.btn--2 {
-        margin:0 auto 35px;
-        display: block;
-        float: none;
-        text-align: center
     }
 }
 
@@ -87,13 +73,20 @@ a:hover {
     z-index: 50
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 740px) {
     .header-main {
         height:auto;
         position: relative;
         width: 100%
     }
 }
+
+.nav-2 li {
+    font-family: "Montserrat",sans-serif;
+    line-height: 94px;
+    margin-right: 25px
+}
+
 
 .header-main .nav-1 {
     float: right;
@@ -102,7 +95,7 @@ a:hover {
     height: 42px
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 740px) {
     .header-main .nav-1 {
         margin:0;
         float: none;
@@ -118,30 +111,18 @@ a:hover {
     float: left
 }
 
-@media screen and (max-width: 930px) {
-    .header-main .nav-2 {
-        margin-top:12px
-    }
-}
-
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 740px) {
     .header-main .nav-2 {
         float:none;
         text-align: center;
-        margin-bottom: 10px;
         margin-top: 0
     }
-}
-
-.header-main .nav-3 {
-    float: right
-}
-
-@media screen and (max-width: 640px) {
-    .header-main .nav-3 {
-        text-align:center;
-        float: none
+    .nav-2 li {
+        font-family: "Montserrat",sans-serif;
+        line-height: 50px;
+        margin-right: 25px
     }
+
 }
 
 .nav-1 li,.nav-2 li,.nav-3 li {
@@ -169,32 +150,3 @@ a:hover {
     color: #fff
 }
 
-.nav-2 li {
-    font-family: "Montserrat",sans-serif;
-    font-size: 11px;
-    line-height: 94px;
-    margin-right: 25px
-}
-
-@media screen and (max-width: 930px) {
-    .nav-2 li {
-        font-size:10px;
-        line-height: 17px;
-        display: block
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .nav-2 li {
-        margin:0;
-        padding: 0 10px;
-        line-height: 1.1;
-        display: inline-block
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .nav-3 {
-        margin-bottom:5px
-    }
-}
