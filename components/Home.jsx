@@ -29,7 +29,7 @@ class Hexagon extends React.Component {
                 display: 'inline-block',
                 backgroundColor: '#556474',
                 transform: 'rotateZ(90deg)',
-                backgroundColor: '#FFC425',
+                backgroundColor: '#FFD35D',
             },
             inner_hexagon: {
                 height: '100%',
@@ -47,7 +47,7 @@ class Hexagon extends React.Component {
                 width: (100 * 0.57735) + '%',
                 content: '',
                 transform: 'rotateZ(30deg)',
-                backgroundColor: '#FFC425',
+                backgroundColor: '#FFD35D',
             },
             hexagon_after: {
                 position: 'absolute',
@@ -58,11 +58,24 @@ class Hexagon extends React.Component {
                 width: (100 * 0.57735) + '%',
                 content: '',
                 zIndex: -1,
-                transform: 'rotateZ(-30deg)'
+                transform: 'rotateZ(-30deg)',
+                backgroundColor: '#FFD35D',
             },
             innermost: {
-                transform: 'rotateZ(-180deg)',
-                position: 'absolute',
+                main: {
+                    transform: 'rotateZ(-180deg)',
+                    position: 'absolute',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                },
+                text: {
+                    fontFamily: `'Bungee', cursive`,
+                    fontSize: 14,
+                    margin: 0,
+                    marginTop: 10,
+                    color: '#fff'
+                }
             }
         };
         const customStyles = this.props.customStyles;
@@ -84,7 +97,10 @@ class Hexagon extends React.Component {
                 <div style={constructedStyles.hexagon_before} />
                 <div style={constructedStyles.hexagon} >
                     <div style={styles.inner_hexagon}>
-                        <div style={styles.innermost}>{this.props.link.text}</div>
+                        <div style={styles.innermost.main}>
+                            <img src={this.props.link.img} height="40" width="40" alt="Canvas Dummy" />
+                            <p style={styles.innermost.text}>{this.props.link.text}</p>
+                        </div>
                     </div>
                 </div>
                 <div style={constructedStyles.hexagon_after} />
@@ -321,12 +337,14 @@ class Home extends React.Component {
                             <Hexagon length={length}
                                      link={{
                                         text: 'Contact us',
-                                        target: '/contact-us'
+                                        target: '/contact-us',
+                                        img: '../img/home/contact.png',
                                      }} />
                             <Hexagon length={length}
                                      link={{
                                         text: 'Events',
-                                        target: '/events'
+                                        target: '/events',
+                                        img: '../img/home/events.png',
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -340,7 +358,8 @@ class Home extends React.Component {
                             <Hexagon length={length}
                                      link={{
                                         text: 'About us',
-                                        target: '/about'
+                                        target: '/about',
+                                        img: '../img/home/about.png',
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -350,7 +369,8 @@ class Home extends React.Component {
                             <Hexagon length={length}
                                      link={{
                                         text: 'Reach Us',
-                                        target: '/reach-us'
+                                        target: '/reach-us',
+                                        img: '../img/home/reach_us.png',
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -364,7 +384,8 @@ class Home extends React.Component {
                             <Hexagon length={length}
                                      link={{
                                         text: 'Register',
-                                        target: '/register'
+                                        target: '/register',
+                                        img: '../img/home/register.png',
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -378,7 +399,8 @@ class Home extends React.Component {
                             <Hexagon length={length}
                                      link={{
                                         text: 'Gallery',
-                                        target: '/gallery'
+                                        target: '/gallery',
+                                        img: '../img/home/gallery.png',
                                      }}
                                     customStyles={{
                                         hexagon_wrapper: {
