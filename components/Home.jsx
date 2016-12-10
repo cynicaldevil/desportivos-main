@@ -103,7 +103,7 @@ Hexagon.defaultProps = {
     }
 };
 
-const LogoDiv = () => {
+const LogoDiv = Radium(() => {
     const styles = {
         main: {
             display: 'flex',
@@ -112,41 +112,67 @@ const LogoDiv = () => {
         },
         top: {
             logo: {
+                '@media only screen and (min-width: 930px)': {
+                    width: 200
+                },
+                '@media only screen and (min-width: 725px) and (max-width: 930px)': {
+                    width: 150
+                },
+                '@media only screen and (max-width: 724px)': {
+                    width: 170
+                }
             },
             title: {
                 fontFamily: 'daggerSquare-oblique',
-                fontSize: 45,
                 color: '#7F2429',
-                marginBottom: 20
+                marginBottom: 20,
+                '@media only screen and (min-width: 930px)': {
+                    fontSize: 45,
+                },
+                '@media only screen and (min-width: 725px) and (max-width: 930px)': {
+                    fontSize: 30,
+                },
+                '@media only screen and (max-width: 724px)': {
+                    fontSize: 40
+                }
             },
             text: {
                 fontFamily: 'daggerSquare',
-                fontSize: 20,
                 color: '#020737',
-                marginTop: 0
+                marginTop: 0,
+                '@media only screen and (min-width: 930px)': {
+                    fontSize: 20,
+                },
+                '@media only screen and (min-width: 725px) and (max-width: 930px)': {
+                    fontSize: 15,
+                },
+                '@media only screen and (max-width: 724px)': {
+                    fontSize: 20
+                }
             }
         }
     };
     return(
         <div style={styles.main}>
-            <img style={styles.top.logo} width="200" src={'../img/home/desp-logo.png'} />
+            <img style={styles.top.logo} src={'../img/home/desp-logo.png'} />
             <p style={styles.top.title}>Desportivos '17</p>
             <p style={styles.top.text}>Reinvent the champion in you!</p>
         </div>
     );
-}
+});
 
 @Radium
 class Home extends React.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         const styles = {
             main: {
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-start'
+                justifyContent: 'flex-start',
             },
             row: {
                 height: 130,
@@ -154,13 +180,18 @@ class Home extends React.Component {
                 alignItems: 'center',
             },
             honeycomb: {
-                marginTop: 94
+                marginTop: 94,
+                '@media only screen and (max-width: 725px)': {
+                    display: 'none'
+                }
             },
             particles: {
+                width: '100%',
+                maxHeight: 1000,
                 position: 'absolute',
                 top: 0, left: 0,
                 border: '1px solid white',
-                backgroundColor: '#ffe5b6',
+                backgroundColor: '#fff',
                 zIndex: -1,
             },
         };
@@ -238,11 +269,11 @@ class Home extends React.Component {
                 detect_on: 'canvas',
                 events: {
                     onhover: {
-                        enable: true,
+                        enable: false,
                         mode: 'repulse'
                     },
                     onclick: {
-                        enable: true,
+                        enable: false,
                         mode: 'push'
                     },
                     resize: true
@@ -279,8 +310,7 @@ class Home extends React.Component {
         const length = 120;
         return (
             <div style={styles.main}>
-                <Particles width={'100%'}
-                           height={'100%'}
+                <Particles
                            style={styles.particles}
                            params={particles_config}
                 />
