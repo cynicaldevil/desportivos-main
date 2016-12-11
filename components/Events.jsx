@@ -60,28 +60,33 @@ class SportsDataPanel extends React.Component {
   }
 
   render() {
+    const info_display = this.props.data.rules.map((rule, index) => {
+            if(rule.style === 'bold') {
+                return <h4 key={index}>{rule.text}<hr/></h4>;
+            }
+            else if(rule.style === 'normal') {
+                return <ul style={{marginLeft: 20}} key={index}>{rule.text.map((line, index) => {
+                    return <li key={index}>{line}</li>;
+                })}<hr /></ul>;
+            }
+    });
+    const contacts = this.props.data.contact.map((contact, index) => {
+        return (
+            <div key={index}>
+                <p><b>{contact.name}: </b>{contact.number}</p>
+            </div>
+        );
+    });
     return (
       <div>
-
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title style={{textTransform: 'uppercase'}}>{this.props.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Text in a modal</h4>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-            <hr />
-
-            <h4>Overflowing text to show scroll behavior</h4>
-            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            {info_display}
+            <h4>Contacts</h4><hr />
+            {contacts}<hr />
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.close}>Close</Button>
