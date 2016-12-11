@@ -133,7 +133,6 @@ const ScrollHelper = (props) => {
     };
     return(
         <div style={styles.main}>
-            <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" />
             <img style={styles.arrow} src='../img/events/down_arrow.svg' alt='arrow' />
             <div style={{marginBottom: 20}}>
                 <div style={styles.text}>Scroll <br />to <br />view <br /> more</div>
