@@ -309,7 +309,40 @@ const Rules = new Map([
             ['Taekwondo',
             {
                 info: {
-                    rules: [],
+                    rules: [
+                    {
+                        style: 'normal',
+                        text: [
+                            `All Events will be conducted as per Latest TFI Rules.`,
+                            `Decisions by the Referee Panel will be the Final.`,
+                        ]
+                    },
+                    {
+                        style: 'bold',
+                        text: `Events and Weight Categories:`
+                    },
+                    {
+                        style: 'normal',
+                        text: [
+                            `Senior Men and Women`,
+                            `Under 46kg: Not exceeding 46kg`,
+                            `Under 54kg: Not exceeding 54kg`,
+                            `Under 49kg: Over 46kg and Not exceeding 49kg`,
+                            `Under 53kg: Over 49kg and Not exceeding 53kg`,
+                            `Under 57kg: Over 53kg and Not exceeding 57kg`,
+                            `Under 58kg: Over 54kg and Not exceeding 58kg`,
+                            `Under 62kg: Over 57kg and Not exceeding 62kg`,
+                            `Under 63kg: Over 58kg and Not exceeding 63kg`,
+                            `Under 67kg: Over 62kg and Not exceeding 67kg`,
+                            `Under 68kg: Over 63kg and Not exceeding 68kg`,
+                            `Under 73kg: Over 67kg and Not exceeding 73kg`,
+                            `Under 74kg: Over 68kg and Not exceeding 74kg`,
+                            `Under 80kg: Over 74kg and Not exceeding 80kg`,
+                            `Under 87kg: Over 80kg and Not exceeding 87kg`,
+                            `Over 73kg: Over 73kg`,
+                            `Over 87kg: Over 87kg`,
+                        ],
+                    }],
                     contact: []
                 },
                 image: '../img/events/10.png',
@@ -353,35 +386,26 @@ const Rules = new Map([
                     {
                         style: 'normal',
                         text: [
-                            `All Events will be conducted as per Latest TFI Rules.`,
+                            `Registration of All Events will be conducted as per Latest WKF Rules.`,
                             `Decisions by the Referee Panel will be the Final.`,
+                            `All participants should bring their own Karate Equipment`,
+                            `No Equipment will be provided by the Institute.`,
+                            `Shin Guards and Gum Shields are compulsory for Kumite.`,
+                            `1 Gold, 1 Silver and 1 Bronze will be awarded for each category.`,
                         ]
                     },
                     {
                         style: 'bold',
-                        text: `Events and Weight Categories:`
+                        text: `Events and Categories:`
                     },
                     {
                         style: 'normal',
                         text: [
-                            `Senior Men and Women`,
-                            `Under 46kg: Not exceeding 46kg`,
-                            `Under 54kg: Not exceeding 54kg`,
-                            `Under 49kg: Over 46kg and Not exceeding 49kg`,
-                            `Under 53kg: Over 49kg and Not exceeding 53kg`,
-                            `Under 57kg: Over 53kg and Not exceeding 57kg`,
-                            `Under 58kg: Over 54kg and Not exceeding 58kg`,
-                            `Under 62kg: Over 57kg and Not exceeding 62kg`,
-                            `Under 63kg: Over 58kg and Not exceeding 63kg`,
-                            `Under 67kg: Over 62kg and Not exceeding 67kg`,
-                            `Under 68kg: Over 63kg and Not exceeding 68kg`,
-                            `Under 73kg: Over 67kg and Not exceeding 73kg`,
-                            `Under 74kg: Over 68kg and Not exceeding 74kg`,
-                            `Under 80kg: Over 74kg and Not exceeding 80kg`,
-                            `Under 87kg: Over 80kg and Not exceeding 87kg`,
-                            `Over 73kg: Over 73kg`,
-                            `Over 87kg: Over 87kg`,
-                        ],
+                            `Senior Kata Male: All Weights in 1 Category.`,
+                            `Senior Kata Female: All Weights in 1 Category.`,
+                            `Senior Kumite Male: -59Kg, -67Kg, -75Kg, +75Kg.`,
+                            `No separate categories are there for Color and Black Belts.`,
+                        ]
                     }],
                     contact: [
                     {
