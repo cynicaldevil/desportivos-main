@@ -10,12 +10,6 @@ div,ul,li,header,nav {
 .navbar-row {
     *zoom:1}
 
-.navbar-row:after {
-    content: "";
-    display: table;
-    clear: both
-}
-
 a {
     text-decoration: none;
     outline: none
