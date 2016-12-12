@@ -52,7 +52,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 850px) {
     .navbar-row {
         margin:0
     }
@@ -67,7 +67,7 @@ a:hover {
     z-index: 50
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 850px) {
     .header-main {
         height:auto;
         position: relative;
@@ -89,7 +89,7 @@ a:hover {
     height: 42px
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 850px) {
     .header-main .nav-1 {
         margin:0;
         float: none;
@@ -105,7 +105,7 @@ a:hover {
     float: left
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 850px) {
     .header-main .nav-2 {
         float:none;
         text-align: center;

@@ -32,16 +32,26 @@ class Navbar extends React.Component {
                 letterSpacing: -1,
             },
             image: {
-                width: 27,
-                height: 27,
                 marginRight: 10,
                 marginLeft: 10,
+                '@media only screen and (min-width: 476px)': {
+                    width: 27,
+                    height: 27,
+                },
+                '@media only screen and (max-width: 475px)': {
+                    width: 20,
+                    height: 20,
+                }
             },
             social_media: {
                 height: 94,
                 display: 'flex',
                 alignItems: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                '@media only screen and (max-width: 475px)': {
+                    marginTop: 13,
+                    flexDirection: 'column'
+                }
             }
         };
         return(
