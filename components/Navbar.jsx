@@ -60,12 +60,12 @@ class Navbar extends React.Component {
                     <nav className="nav-2">
                         <ul style={styles.ul} id="navigation">
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About us</Link></li>
-                            <li><Link to="/events">Events</Link></li>
-                            <li><Link to="/reach-us">Reach Us</Link></li>
-                            <li><Link to="/register">Register</Link></li>
-                            <li><Link to="/gallery">Gallery</Link></li>
-                            <li><Link to="/contact-us">Contact Us</Link></li>
+                            <li><Link to="/about" activeStyle={{ color: 'white' }}>About us</Link></li>
+                            <li><Link to="/events" activeStyle={{ color: 'white' }}>Events</Link></li>
+                            <li><Link to="/reach-us" activeStyle={{ color: 'white' }}>Reach Us</Link></li>
+                            <li><Link to="/register" activeStyle={{ color: 'white' }}>Register</Link></li>
+                            <li><Link to="/gallery" activeStyle={{ color: 'white' }}>Gallery</Link></li>
+                            <li><Link to="/contact-us" activeStyle={{ color: 'white' }}>Contact Us</Link></li>
                         </ul>
                     </nav>
                     <div style={styles.social_media}>
