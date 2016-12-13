@@ -34,9 +34,6 @@ class Hexagon extends React.Component {
             inner_hexagon: {
                 height: '100%',
                 width: '100%',
-                display: 'flex',
-                justifyContent: 'space-around',
-                alignItems: 'center',
             },
             hexagon_before: {
                 position: 'absolute',
@@ -67,7 +64,7 @@ class Hexagon extends React.Component {
                     position: 'absolute',
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center'
+                    alignItems: 'center',
                 },
                 text: {
                     fontFamily: `'Bungee', cursive`,
@@ -76,6 +73,22 @@ class Hexagon extends React.Component {
                     marginTop: 10,
                     color: '#fff'
                 }
+            }
+        };
+        const style_according_to_browser = () => {
+            if(navigator.userAgent.indexOf("Firefox") != -1 )
+            {
+                return {...styles.inner_hexagon,
+                            marginTop: 20,
+                        };
+            }
+            else {
+                return {...styles.inner_hexagon,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                        };
             }
         };
         const customStyles = this.props.customStyles;
@@ -96,7 +109,7 @@ class Hexagon extends React.Component {
             <div style={constructedStyles.hexagon_wrapper} >
                 <div style={constructedStyles.hexagon_before} />
                 <div style={constructedStyles.hexagon} >
-                    <div style={styles.inner_hexagon}>
+                    <div style={style_according_to_browser()}>
                         <div style={styles.innermost.main}>
                             <img src={this.props.link.img} height="40" width="40" alt="Canvas Dummy" />
                             <p style={styles.innermost.text}>{this.props.link.text}</p>
