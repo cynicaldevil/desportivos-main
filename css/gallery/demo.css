@@ -37,9 +37,8 @@
     background: #252323;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-    width: 100vw;
 }
 
 a {

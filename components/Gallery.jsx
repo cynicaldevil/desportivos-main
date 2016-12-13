@@ -9,7 +9,6 @@ class Image extends React.Component {
         return(
             <div className="grid__item" data-size={data.dimensions}>
                 <a href={data.image} className="img-wrap"><img src={data.thumb} alt={data.alt} />
-                    <div className="description description--grid">Felicity</div>
                 </a>
             </div>
         );
@@ -115,13 +114,7 @@ class Gallery extends React.Component {
                 alt: '01',
             },
             {
-                dimensions: '958x1280',
-                image: '../img/gallery/original/2.jpg',
-                thumb: '../img/gallery/thumbs/2.jpg',
-                alt: '02',
-            },
-            {
-                dimensions: '837x1280',
+                dimensions: '1280x857',
                 image: '../img/gallery/original/3.jpg',
                 thumb: '../img/gallery/thumbs/3.jpg',
                 alt: '03',
@@ -143,7 +136,79 @@ class Gallery extends React.Component {
                 image: '../img/gallery/original/6.jpg',
                 thumb: '../img/gallery/thumbs/6.jpg',
                 alt: '06',
-            }
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/7.jpg',
+                thumb: '../img/gallery/thumbs/7.jpg',
+                alt: '07',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/9.jpg',
+                thumb: '../img/gallery/thumbs/9.jpg',
+                alt: '09',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/10.jpg',
+                thumb: '../img/gallery/thumbs/10.jpg',
+                alt: '10',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/11.jpg',
+                thumb: '../img/gallery/thumbs/11.jpg',
+                alt: '11',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/12.jpg',
+                thumb: '../img/gallery/thumbs/12.jpg',
+                alt: '12',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/13.jpg',
+                thumb: '../img/gallery/thumbs/13.jpg',
+                alt: '13',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/14.jpg',
+                thumb: '../img/gallery/thumbs/14.jpg',
+                alt: '14',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/15.jpg',
+                thumb: '../img/gallery/thumbs/15.jpg',
+                alt: '15',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/16.jpg',
+                thumb: '../img/gallery/thumbs/16.jpg',
+                alt: '16',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/17.jpg',
+                thumb: '../img/gallery/thumbs/17.jpg',
+                alt: '17',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/19.jpg',
+                thumb: '../img/gallery/thumbs/19.jpg',
+                alt: '19',
+            },
+            {
+                dimensions: '1280x857',
+                image: '../img/gallery/original/20.jpg',
+                thumb: '../img/gallery/thumbs/20.jpg',
+                alt: '20',
+            },
         ];
 
         const display_images = images_data.map((image, index) => {
@@ -151,7 +216,7 @@ class Gallery extends React.Component {
                                 });
 
         return(
-            <div className="gallery-div" style={{paddingTop: 94}}>
+            <div className="gallery-div" style={{paddingTop: 94, width: '100%'}}>
                 <div ref={(input) => this.scriptDiv = input} />
                 <link rel="stylesheet" type="text/css" href="../css/gallery/normalize.css" />
                 <link rel="stylesheet" type="text/css" href="../css/gallery/demo.css" />
