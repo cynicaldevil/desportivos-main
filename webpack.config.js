@@ -1,21 +1,18 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
-module.exports = {
+const base_config = {
     context: __dirname,
     entry: {
         'main': './index.js',
     },
     output: {
-        path: __dirname + 'dist/assets',
+        path: __dirname + '/build',
         filename: '[hash].[name].js',
     },
-    devServer: {
-        contentBase: __dirname,
-    },
-    devtool: 'eval-source-map',
     module: {
         rules: [
             {  
@@ -58,3 +55,39 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     }
 };
+
+const dev_config = Object.assign({}, base_config, {
+    devServer: {
+        contentBase: __dirname,
+    },
+    devtool: 'eval-source-map',
+});
+
+const prod_config = Object.assign({}, base_config, {
+    devtool: 'cheap-module-source-map',
+    plugins: (() => {
+        const base_plugins = base_config.plugins;
+        const add_prod_plugins = [
+            new webpack.optimize.UglifyJsPlugin({
+                                      compress:{
+                                        warnings: true
+                                      }
+                                    }),
+            new CopyWebpackPlugin([
+                {from: './img', to: './img'},
+                {from: './css', to: './css'},
+                {from: './js', to: './js'},
+            ]),
+        ];
+        return base_plugins.concat(add_prod_plugins);
+    })(),
+});
+
+module.exports = (() => {
+    if(process.env.NODE_ENV === 'development') {
+        return dev_config;
+    }
+    else if(process.env.NODE_ENV === 'production') {
+        return prod_config;
+    }
+})();
