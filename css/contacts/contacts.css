@@ -42,13 +42,7 @@ section {
     float: left;
     overflow: hidden;
     margin: 10px 1%;
-    min-width: 320px;
-    max-width: 480px;
-    max-height: 360px;
-    width: 48%;
-    background: #3085a3;
     text-align: center;
-    cursor: pointer;
 }
 
 .contactsGrid figure img {
@@ -142,7 +136,8 @@ figure.effect-zoe:hover p.icon-links a:focus {
 
 figure.effect-zoe p.description {
     position: absolute;
-    bottom: 8em;
+    bottom: 4em;
+    font-weight: 700;
     padding: 2em;
     color: #fff;
     text-transform: none;

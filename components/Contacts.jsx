@@ -1,5 +1,7 @@
 import React from 'react';
 
+require('../css/fonts.css');
+
 class Contact extends React.Component {
     constructor(props) {
         super(props);
@@ -7,33 +9,49 @@ class Contact extends React.Component {
     render() {
         const styles = {
             main: {
-                height: 250,
+                height: 170,
             },
             description: {
-                fontSize: 11,
+                fontSize: 9,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between'
             },
-            fb: {
-                marginRight: 10,
+            social_media: {
+                marginRight: -1,
                 marginLeft: 10,
-                    width: 20,
-                    height: 20,
+                width: 20,
+                height: 20,
             },
+            position: {
+                fontFamily: `Montserrat`,
+                textTransform: 'uppercase',
+                fontSize: 14,
+                marginBottom: 4,
+            },
+            name: {
+                wordSpacing: 2,
+            }
         };
         const data = this.props.data;
         return (
-            <div style={{width: 280, margin: 10}}>
-                <p>{!(typeof data.position === 'undefined') && data.position}</p>
+            <div style={{width: 210, margin: 10, marginTop: 20}}>
+                <p style={styles.position}>{!(typeof data.position === 'undefined') && data.position}</p>
                 <figure style={styles.main} className="effect-zoe">
                     <img src={data.image} alt="img"/>
                     <figcaption style={styles.description}>
-                        <h2>{data.name}</h2>
-                        <p className="icon-links">
-                            <a href="#"><img style={styles.fb} src='../img/navbar/Facebook.png' alt='yt'/></a>
+                        <h3 style={styles.name}>{data.name}</h3>
+                        <p className="icon-links" style={{display: 'flex'}}>
+                            <a href={data.fb_link} target='blank'>
+                                <img style={styles.social_media} src='../img/navbar/Facebook.png' alt='yt'/>
+                            </a>
+                            {!(typeof data.github_link === 'undefined') &&
+                            <a href={data.github_link} target='blank'>
+                                <img style={styles.social_media} src='../img/contacts/github.png' alt='yt'/>
+                            </a>
+                            }
                         </p>
-                        <p className="description">{data.number}</p>
+                        <p className="description" style={{fontSize: 15}}>{data.number}</p>
                     </figcaption>
                 </figure>
             </div>
@@ -106,7 +124,7 @@ class Contacts extends React.Component {
                     position: 'Public Relations Head'
                 },
                 {
-                    image: '../img/contacts/26.jpg',
+                    image: '../img/contacts/Nikhil Tech Lead.jpg',
                     name: 'Nikhil Shagrithaya',
                     number: '+91 99309 29954',
                     fb_link: 'https://www.facebook.com/nikhil.shagrithaya.7',
@@ -118,13 +136,6 @@ class Contacts extends React.Component {
                     name: 'Rohan Bhatti',
                     fb_link: 'https://www.facebook.com/rohan4b',
                     position: 'Sponsorship Head'
-                },
-                {
-                    image: '../img/contacts/Arpit Agarwal_finance Head Y14.jpg',
-                    name: 'Arpit Agarwal',
-                    number: '+91 80032 33928',
-                    fb_link: 'https://www.facebook.com/agrawalarpit96',
-                    position: 'Finance Head'
                 },
                 {
                     image: '../img/contacts/ankit chaplot_Online Promotion head Y14.jpg',
@@ -143,6 +154,13 @@ class Contacts extends React.Component {
                     name: 'Yashovardhan Agrawal',
                     fb_link: 'https://www.facebook.com/yashovardhanagrawal',
                     position: 'Tech Team - Support'
+                },
+                {
+                    image: '../img/contacts/Arpit Agarwal_finance Head Y14.jpg',
+                    name: 'Arpit Agarwal',
+                    number: '+91 80032 33928',
+                    fb_link: 'https://www.facebook.com/agrawalarpit96',
+                    position: 'Finance Head'
                 },
                 ]
             ],
@@ -284,16 +302,31 @@ class Contacts extends React.Component {
             ]);
 
             const display_contacts = [...contacts].map((contact_type, index) => {
+                const determine_position = (type) => {
+                    if(type.startsWith('_')) {
+                        return ' ';
+                    }
+                    else return type;
+                };
                 const styles = {
+                    main: {
+                        borderBottom: '1px solid white',
+                    },
                     group: {
-                        border: '1px solid white',
+                        padding: 30,
+                        paddingTop: 0,
                         display: 'flex',
                         height: 'auto',
-                        flexWrap: 'wrap'
-                    }
+                        flexWrap: 'wrap',
+                        justifyContent: 'space-around',
+                    },
+                    position: {
+                        fontFamily: `Montserrat`,
+                        textTransform: 'uppercase'
+                    },
                 };
-                return <div key={index}>
-                        <p>{contact_type[0]}</p>
+                return <div key={index} style={styles.main}>
+                        <h2 style={styles.position}>{determine_position(contact_type[0])}</h2>
                         <div style={styles.group}>
                         {contact_type[1].map((contact, index) => {
                             return <Contact key={index} data={contact} />;
