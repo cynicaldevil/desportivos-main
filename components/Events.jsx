@@ -97,27 +97,40 @@ class SportsDataPanel extends React.Component {
   }
 }
 
-const ScrollHelper = (props) => {
+
+const ScrollHelper = Radium((props) => {
     const styles = {
         main: {
-            marginRight: 70,
-            marginTop: 70,
-            padding: 10,
-            float: 'right',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'flex-start',
             flexDirection: 'row',
-            backgroundColor: 'rgba(255, 255, 255, 0.3)',
-            borderTop: '7px solid white',
+            overflow: 'hidden',
+            '@media only screen and (min-width: 861px)': {
+                marginRight: 70,
+                marginTop: 70,
+                padding: 10,
+                float: 'right',
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                borderTop: '7px solid white',
+            },
+            '@media only screen and (max-width: 860px)': {
+                borderBottom: '4px solid white',
+            }
         },
         text: {
-            fontSize: 55,
             color: '#FFF',
             textTransform: 'uppercase',
             fontFamily: `"Oswald", sans-serif`,
             margin: 20,
             lineHeight: 1,
+            display: 'flex',
+            '@media only screen and (min-width: 861px)': {
+                flexDirection:'column',
+            },
+            '@media only screen and (max-width: 860px)': {
+                flexDirection:'row',
+            }
         },
         arrow: {
             marginTop: -20,
@@ -125,23 +138,46 @@ const ScrollHelper = (props) => {
             marginLeft: -20,
         },
         line: {
+            '@media only screen and (min-width: 861px)': {
             width: '95%',
             height: 3,
             backgroundColor: 'white',
             marginRight: 100
+        }
+        },
+        para: {
+            marginRight: 8,
+            '@media only screen and (min-width: 861px)': {
+                marginBottom: -2,
+                fontSize: 55,
+            },
+            '@media only screen and (max-width: 860px) and (min-width: 431px)': {
+                fontSize: 30,
+                marginBottom: -20,
+            },
+            '@media only screen and (max-width: 430px)': {
+                fontSize: 21,
+                marginBottom: -20,
+            }
         }
     };
     return(
         <div style={styles.main}>
             <img style={styles.arrow} src='../img/events/down_arrow.svg' alt='arrow' />
             <div style={{marginBottom: 20}}>
-                <div style={styles.text}>Scroll <br />to <br />view <br /> more</div>
+                <div style={styles.text}>
+                    <p style={styles.para}>Scroll </p>
+                    <p style={styles.para}>to </p>
+                    <p style={styles.para}>view </p>
+                    <p style={styles.para}>more</p>
+                </div>
                 <div style={styles.line} />
             </div>
         </div>
     );
-};
+});
 
+@Radium
 class Events extends React.Component {
     constructor(props) {
         super(props);
@@ -258,9 +294,11 @@ class Events extends React.Component {
 
         const styles = {
             main: {
-                paddingTop: 94,
                 backgroundColor: '#E0DEFF',
                 backgroundSize: 'cover',
+                '@media only screen and (min-width: 851px)': {
+                    paddingTop: 94,
+                }
             },
             background: {
                 width: '100vw',
@@ -269,7 +307,11 @@ class Events extends React.Component {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-
+            },
+            list: {
+                '@media only screen and (max-width: 860px)': {
+                    marginTop: 150,
+                }
             }
         };
 
@@ -288,7 +330,7 @@ class Events extends React.Component {
                                                     />}
                     <ScrollHelper />
                     <div className="isolayer isolayer--scroll1 isolayer--shadow">
-                        <ul className="grid grid--effect-flip">
+                        <ul style={styles.list} className="grid grid--effect-flip">
                             {display_sports}
                         </ul>
                     </div>
