@@ -8,7 +8,7 @@ class Image extends React.Component {
         const data = this.props.data;
         return(
             <div className="grid__item" data-size={data.dimensions}>
-                <a href={data.image} className="img-wrap"><img src={data.thumb} alt={data.alt} />
+                <a style={{border: '2px solid white'}} href={data.image} className="img-wrap"><img src={data.thumb} alt={data.alt} />
                 </a>
             </div>
         );
@@ -215,8 +215,19 @@ class Gallery extends React.Component {
                                     return <Image data={image} key={index}/>;
                                 });
 
+        const styles = {
+            main: {
+                paddingTop: 94,
+                width: '100%',
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'fixed',
+                backgroundSize: 'cover',
+                backgroundImage: `url('../img/gallery/image.jpg')`,
+            }
+        };
+
         return(
-            <div className="gallery-div" style={{paddingTop: 94, width: '100%'}}>
+            <div className="gallery-div" style={styles.main}>
                 <div ref={(input) => this.scriptDiv = input} />
                 <link rel="stylesheet" type="text/css" href="../css/gallery/normalize.css" />
                 <link rel="stylesheet" type="text/css" href="../css/gallery/demo.css" />
