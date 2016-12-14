@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleRoot } from 'radium';
 
 import Navbar from './Navbar';
+import Home from './Home';
 
 class Root extends React.Component {
     constructor(props) {
@@ -9,7 +10,10 @@ class Root extends React.Component {
     }
 
     render() {
-        const isChildHome = this.props.children.type.name === 'HomeContainer';
+        let isChildHome;
+        React.Children.forEach(this.props.children, (child) => {
+            isChildHome = (child.type === Home);
+        });
         return(
             <StyleRoot>
             <div>
