@@ -5,6 +5,8 @@ import Radium from 'radium';
 import { Button } from 'react-bootstrap';
 import Particles from 'react-particles-js';
 
+import res from '../utils/resolve';
+
 require('../css/fonts.css');
 
 class Hexagon extends React.Component {
@@ -183,7 +185,7 @@ const LogoDiv = Radium(() => {
     };
     return(
         <div style={styles.main}>
-            <img style={styles.top.logo} src={'../img/home/desp-logo.png'} />
+            <img style={styles.top.logo} src={res('img/home/desp-logo.png')} />
             <p style={styles.top.title}>Desportivos '17</p>
             <p style={styles.top.text}>Reinvent the champion in you!</p>
         </div>
@@ -351,13 +353,13 @@ class Home extends React.Component {
                                      link={{
                                         text: 'Contact us',
                                         target: '/contact-us',
-                                        img: '../img/home/contact.png',
+                                        img: res('img/home/contact.png'),
                                      }} />
                             <Hexagon length={length}
                                      link={{
                                         text: 'Events',
                                         target: '/events',
-                                        img: '../img/home/events.png',
+                                        img: res('img/home/events.png'),
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -372,7 +374,7 @@ class Home extends React.Component {
                                      link={{
                                         text: 'About us',
                                         target: '/about',
-                                        img: '../img/home/about.png',
+                                        img: res('img/home/about.png'),
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -383,7 +385,7 @@ class Home extends React.Component {
                                      link={{
                                         text: 'Reach Us',
                                         target: '/reach-us',
-                                        img: '../img/home/reach_us.png',
+                                        img: res('img/home/reach_us.png'),
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -398,7 +400,7 @@ class Home extends React.Component {
                                      link={{
                                         text: 'Register',
                                         target: '/register',
-                                        img: '../img/home/register.png',
+                                        img: res('img/home/register.png'),
                                      }}
                                      customStyles={{
                                         hexagon_wrapper: {
@@ -413,7 +415,7 @@ class Home extends React.Component {
                                      link={{
                                         text: 'Gallery',
                                         target: '/gallery',
-                                        img: '../img/home/gallery.png',
+                                        img: res('img/home/gallery.png'),
                                      }}
                                     customStyles={{
                                         hexagon_wrapper: {

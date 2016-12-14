@@ -1,5 +1,7 @@
 import React from 'react';
 
+import res from '../utils/resolve';
+
 class Image extends React.Component {
     constructor(props) {
         super(props);
@@ -23,11 +25,11 @@ class Gallery extends React.Component {
     componentDidMount() {
 
         const script_paths = [
-            '../js/gallery/modernizr-custom.js',
-            '../js/events/imagesloaded.pkgd.min.js',
-            '../js/events/masonry.pkgd.min.js',
-            '../js/events/classie.js',
-            '../js/gallery/main.js'
+            res('js/gallery/modernizr-custom.js'),
+            res('js/events/imagesloaded.pkgd.min.js'),
+            res('js/events/masonry.pkgd.min.js'),
+            res('js/events/classie.js'),
+            res('js/gallery/main.js')
         ];
 
         script_paths.forEach((script_path) => {
@@ -109,104 +111,104 @@ class Gallery extends React.Component {
         const images_data = [
             {
                 dimensions: '1280x853',
-                image: '../img/gallery/original/1.jpg',
-                thumb: '../img/gallery/thumbs/1.jpg',
+                image: res('img/gallery/original/1.jpg'),
+                thumb: res('img/gallery/thumbs/1.jpg'),
                 alt: '01',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/3.jpg',
-                thumb: '../img/gallery/thumbs/3.jpg',
+                image: res('img/gallery/original/3.jpg'),
+                thumb: res('img/gallery/thumbs/3.jpg'),
                 alt: '03',
             },
             {
                 dimensions: '1280x961',
-                image: '../img/gallery/original/4.jpg',
-                thumb: '../img/gallery/thumbs/4.jpg',
+                image: res('img/gallery/original/4.jpg'),
+                thumb: res('img/gallery/thumbs/4.jpg'),
                 alt: '04',
             },
             {
                 dimensions: '1280x1131',
-                image: '../img/gallery/original/5.jpg',
-                thumb: '../img/gallery/thumbs/5.jpg',
+                image: res('img/gallery/original/5.jpg'),
+                thumb: res('img/gallery/thumbs/5.jpg'),
                 alt: '05',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/6.jpg',
-                thumb: '../img/gallery/thumbs/6.jpg',
+                image: res('img/gallery/original/6.jpg'),
+                thumb: res('img/gallery/thumbs/6.jpg'),
                 alt: '06',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/7.jpg',
-                thumb: '../img/gallery/thumbs/7.jpg',
+                image: res('img/gallery/original/7.jpg'),
+                thumb: res('img/gallery/thumbs/7.jpg'),
                 alt: '07',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/9.jpg',
-                thumb: '../img/gallery/thumbs/9.jpg',
+                image: res('img/gallery/original/9.jpg'),
+                thumb: res('img/gallery/thumbs/9.jpg'),
                 alt: '09',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/10.jpg',
-                thumb: '../img/gallery/thumbs/10.jpg',
+                image: res('img/gallery/original/10.jpg'),
+                thumb: res('img/gallery/thumbs/10.jpg'),
                 alt: '10',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/11.jpg',
-                thumb: '../img/gallery/thumbs/11.jpg',
+                image: res('img/gallery/original/11.jpg'),
+                thumb: res('img/gallery/thumbs/11.jpg'),
                 alt: '11',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/12.jpg',
-                thumb: '../img/gallery/thumbs/12.jpg',
+                image: res('img/gallery/original/12.jpg'),
+                thumb: res('img/gallery/thumbs/12.jpg'),
                 alt: '12',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/13.jpg',
-                thumb: '../img/gallery/thumbs/13.jpg',
+                image: res('img/gallery/original/13.jpg'),
+                thumb: res('img/gallery/thumbs/13.jpg'),
                 alt: '13',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/14.jpg',
-                thumb: '../img/gallery/thumbs/14.jpg',
+                image: res('img/gallery/original/14.jpg'),
+                thumb: res('img/gallery/thumbs/14.jpg'),
                 alt: '14',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/15.jpg',
-                thumb: '../img/gallery/thumbs/15.jpg',
+                image: res('img/gallery/original/15.jpg'),
+                thumb: res('img/gallery/thumbs/15.jpg'),
                 alt: '15',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/16.jpg',
-                thumb: '../img/gallery/thumbs/16.jpg',
+                image: res('img/gallery/original/16.jpg'),
+                thumb: res('img/gallery/thumbs/16.jpg'),
                 alt: '16',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/17.jpg',
-                thumb: '../img/gallery/thumbs/17.jpg',
+                image: res('img/gallery/original/17.jpg'),
+                thumb: res('img/gallery/thumbs/17.jpg'),
                 alt: '17',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/19.jpg',
-                thumb: '../img/gallery/thumbs/19.jpg',
+                image: res('img/gallery/original/19.jpg'),
+                thumb: res('img/gallery/thumbs/19.jpg'),
                 alt: '19',
             },
             {
                 dimensions: '1280x857',
-                image: '../img/gallery/original/20.jpg',
-                thumb: '../img/gallery/thumbs/20.jpg',
+                image: res('img/gallery/original/20.jpg'),
+                thumb: res('img/gallery/thumbs/20.jpg'),
                 alt: '20',
             },
         ];
@@ -222,17 +224,17 @@ class Gallery extends React.Component {
                 backgroundRepeat: 'no-repeat',
                 backgroundAttachment: 'fixed',
                 backgroundSize: 'cover',
-                backgroundImage: `url('../img/gallery/image.jpg')`,
+                backgroundImage: `url(${res('img/gallery/image.jpg')})`,
             }
         };
 
         return(
             <div className="gallery-div" style={styles.main}>
                 <div ref={(input) => this.scriptDiv = input} />
-                <link rel="stylesheet" type="text/css" href="../css/gallery/normalize.css" />
-                <link rel="stylesheet" type="text/css" href="../css/gallery/demo.css" />
-                <link rel="stylesheet" type="text/css" href="../css/gallery/style.css" />
-                <link rel="stylesheet" type="text/css" href="../css/gallery/font-awesome.css" />
+                <link rel="stylesheet" type="text/css" href={res('css/gallery/normalize.css')}/>
+                <link rel="stylesheet" type="text/css" href={res('css/gallery/demo.css')}/>
+                <link rel="stylesheet" type="text/css" href={res('css/gallery/style.css')}/>
+                <link rel="stylesheet" type="text/css" href={res('css/gallery/font-awesome.css')} />
                 <div className="container">
                     <div className="content">
                     <div className="grid">

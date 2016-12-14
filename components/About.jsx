@@ -1,6 +1,8 @@
 import React from 'react';
 import Radium from 'radium';
 
+import res from '../utils/resolve';
+
 require('../css/fonts.css');
 
 @Radium
@@ -77,7 +79,7 @@ class About extends React.Component {
                          an enthralling experience.`}
                     </p>
                 </div>
-                <img src='../img/about/mascot.png' alt='mascot' />
+                <img src={res('img/about/mascot.png')} alt='mascot' />
                 <div style={styles.topDiv}>
                     <h1 style={styles.header}>Meet Vector!</h1>
                     <p style={styles.text}>

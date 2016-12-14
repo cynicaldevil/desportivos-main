@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import styles from '../css/screen.css';
 import Radium from 'radium';
 
+import res from '../utils/resolve';
+
 @Radium
 class Navbar extends React.Component {
     constructor(props) {
@@ -71,15 +73,15 @@ class Navbar extends React.Component {
                     <div style={styles.social_media}>
                         <a target='blank'
                            href='https://www.facebook.com/Desportivos.LNMIIT'>
-                            <img style={styles.image} src='../img/navbar/Facebook.png' alt='fb'/>
+                            <img style={styles.image} src={res('img/navbar/Facebook.png')} alt='fb'/>
                             </a>
                         <a target='blank'
                            href='https://www.youtube.com/channel/UCQpn6OkgdHV5sy2qWIcADqA'>
-                            <img style={styles.image} src='../img/navbar/YouTube.png' alt='yt'/>
+                            <img style={styles.image} src={res('img/navbar/YouTube.png')} alt='yt'/>
                         </a>
                         <a target='blank'
                            href='https://www.google.co.in/maps/place/LNMIIT/@26.9342333,75.9205137,17z/data=!4m2!3m1!1s0x396dba21e8a1d1c9:0x5ab565cce4d44c2b?hl=en'>
-                            <img style={styles.image} src='../img/navbar/location.ico' alt='loc'/>
+                            <img style={styles.image} src={res('img/navbar/location.ico')} alt='loc'/>
                         </a>
                     </div>
                 </div>

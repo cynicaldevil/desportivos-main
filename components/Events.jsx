@@ -1,9 +1,10 @@
 import React from 'react';
 import Radium from 'radium';
-
 import { Modal, Button } from 'react-bootstrap/lib';
 
 import Rules from '../utils/Rules';
+
+import res from '../utils/resolve';
 
 @Radium
 class Sport extends React.Component {
@@ -32,8 +33,8 @@ class Sport extends React.Component {
         return (
             <li className="grid__item" style={show_styles()}>
                 <div className="grid__link" onClick={() => this.props.onClickCB(this.props.name) }>
-                    <img className="grid__img layer" src="../img/events/back_1.png" alt="Canvas Dummy" />
-                    <img className="grid__img layer" src="../img/events/back_2.png" alt="Dummy" />
+                    <img className="grid__img layer" src={res('img/events/back_1.png')} alt="Canvas Dummy" />
+                    <img className="grid__img layer" src={res('img/events/back_2.png')} alt="Dummy" />
                     <img className="grid__img layer" src={this.props.image} alt="01" />
                     <span className="grid__title">{this.props.name}</span>
                 </div>
@@ -163,7 +164,7 @@ const ScrollHelper = Radium((props) => {
     };
     return(
         <div style={styles.main}>
-            <img style={styles.arrow} src='../img/events/down_arrow.svg' alt='arrow' />
+            <img style={styles.arrow} src={res('img/events/down_arrow.svg')} alt='arrow' />
             <div style={{marginBottom: 20}}>
                 <div style={styles.text}>
                     <p style={styles.para}>Scroll </p>
@@ -191,13 +192,13 @@ class Events extends React.Component {
     componentDidMount() {
 
         const script_paths = [
-            '../js/events/modernizr.custom.js',
-            '../js/events/imagesloaded.pkgd.min.js',
-            '../js/events/masonry.pkgd.min.js',
-            '../js/events/dynamics.min.js',
-            '../js/events/classie.js',
-            '../js/events/animOnScroll.js',
-            '../js/events/main.js'
+            res('js/events/modernizr.custom.js'),
+            res('js/events/imagesloaded.pkgd.min.js'),
+            res('js/events/masonry.pkgd.min.js'),
+            res('js/events/dynamics.min.js'),
+            res('js/events/classie.js'),
+            res('js/events/animOnScroll.js'),
+            res('js/events/main.js')
         ];
 
         script_paths.forEach((script_path) => {
@@ -319,10 +320,10 @@ class Events extends React.Component {
             <div style={styles.main}>
                 <div ref={(input) => this.scriptDiv = input} />
                 <div className="include-deps">
-                    <link rel="stylesheet" type="text/css" href="../css/events/normalize.css" />
-                    <link rel="stylesheet" type="text/css" href="../css/events/demo.css" />
-                    <link rel="stylesheet" type="text/css" href="../css/events/component.css" />
-                    <link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css" />
+                    <link rel="stylesheet" type="text/css" href={res('css/events/normalize.css')}/>
+                    <link rel="stylesheet" type="text/css" href={res('css/events/demo.css')}/>
+                    <link rel="stylesheet" type="text/css" href={res('css/events/component.css')}/>
+                    <link rel="stylesheet" type="text/css" href={res('css/bootstrap/bootstrap.min.css')}/>
                     {this.state.panel_is_visible && <SportsDataPanel
                                                         data={this.state.panel_data}
                                                         name={this.state.name}

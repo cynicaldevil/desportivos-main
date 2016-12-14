@@ -1,3 +1,5 @@
+import res from './resolve';
+
 const Rules = new Map([
             ['basketball',
             {
@@ -38,7 +40,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/1.png',
+                image: res('img/events/1.png'),
             }
             ],
             ['badminton',
@@ -77,7 +79,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/2.png',
+                image: res('img/events/2.png'),
             }
             ],
             ['boxing',
@@ -86,7 +88,7 @@ const Rules = new Map([
                     rules: [],
                     contact: []
                 },
-                image: '../img/events/3.png',
+                image: res('img/events/3.png'),
             }
             ],
             ['kabaddi',
@@ -95,7 +97,7 @@ const Rules = new Map([
                     rules: [],
                     contact: []
                 },
-                image: '../img/events/4.png',
+                image: res('img/events/4.png'),
             }
             ],
             ['cricket',
@@ -130,7 +132,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/5.png',
+                image: res('img/events/5.png'),
             }
             ],
             ['football',
@@ -159,7 +161,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/6.png',
+                image: res('img/events/6.png'),
             }
             ],
             ['Table Tennis',
@@ -231,7 +233,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/7.png',
+                image: res('img/events/7.png'),
             }
             ],
             ['Volleyball',
@@ -265,7 +267,7 @@ const Rules = new Map([
                     },
                     ],
                 },
-                image: '../img/events/8.png',
+                image: res('img/events/8.png'),
             }
             ],
             ['Lawn Tennis',
@@ -303,7 +305,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/9.png',
+                image: res('img/events/9.png'),
             }
             ],
             ['Taekwondo',
@@ -345,7 +347,7 @@ const Rules = new Map([
                     }],
                     contact: []
                 },
-                image: '../img/events/10.png',
+                image: res('img/events/10.png'),
             }
             ],
             ['Squash',
@@ -376,7 +378,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/11.png',
+                image: res('img/events/11.png'),
             }
             ],
             ['Karate',
@@ -418,7 +420,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/12.png',
+                image: res('img/events/12.png'),
             }
             ],
             ['Kho Kho',
@@ -427,7 +429,7 @@ const Rules = new Map([
                     rules: [],
                     contact: [],
                 },
-                image: '../img/events/13.png',
+                image: res('img/events/13.png'),
             }
             ],
             ['Kick Boxing',
@@ -436,7 +438,7 @@ const Rules = new Map([
                     rules: [],
                     contact: [],
                 },
-                image: '../img/events/14.png',
+                image: res('img/events/14.png'),
             }
             ],
             ['Five-a-side Football',
@@ -454,7 +456,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/15.png',
+                image: res('img/events/15.png'),
             }
             ],
             ['Chess',
@@ -510,7 +512,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/16.png',
+                image: res('img/events/16.png'),
             }
             ],
             ['LAN gaming',
@@ -519,7 +521,7 @@ const Rules = new Map([
                     rules: [],
                     contact: [],
                 },
-                image: '../img/events/17.png',
+                image: res('img/events/17.png'),
             }
             ],
             ['Carrom',
@@ -547,7 +549,7 @@ const Rules = new Map([
                     },
                     ]
                 },
-                image: '../img/events/18.png',
+                image: res('img/events/18.png'),
             }
             ],
         ]);
