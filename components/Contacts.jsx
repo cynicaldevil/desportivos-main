@@ -102,7 +102,7 @@ class Contacts extends React.Component {
                 },
                 ]
             ],
-            ['_core',
+            ['Core Team',
                 [
                 {
                     image: '../img/contacts/shuham chaurasia_Event Coordinator Y15.jpg',
@@ -334,11 +334,18 @@ class Contacts extends React.Component {
                         </div>
                         </div>;
             });
+        const styles = {
+            main: {
+                paddingTop: 94,
+                backgroundImage: `url('http://materialdesignblog.com/wp-content/uploads/2016/06/image3.jpg')`
+            }
+        };
         return(
-            <div className="contactsGrid" style={{paddingTop: 94}}>
-                <link rel="stylesheet" type="text/css" href="../css/contacts/contacts.css" />
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-                {display_contacts}
+            <div style={styles.main}>
+                <div className="contactsGrid">
+                    <link rel="stylesheet" type="text/css" href="../css/contacts/contacts.css" />
+                    {display_contacts}
+                </div>
             </div>
         );
     }
