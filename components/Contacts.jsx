@@ -5,18 +5,35 @@ class Contact extends React.Component {
         super(props);
     }
     render() {
+        const styles = {
+            main: {
+                height: 250,
+            },
+            description: {
+                fontSize: 11,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+            },
+            fb: {
+                marginRight: 10,
+                marginLeft: 10,
+                    width: 20,
+                    height: 20,
+            },
+        };
+        const data = this.props.data;
         return (
-            <div className="contactsGrid">
-                <figure className="effect-zoe">
-                    <img src="../img/contacts/26.jpg" alt="img26"/>
-                    <figcaption>
-                        <h2>Creative <span>Zoe</span></h2>
+            <div style={{width: 280, margin: 10}}>
+                <p>{!(typeof data.position === 'undefined') && data.position}</p>
+                <figure style={styles.main} className="effect-zoe">
+                    <img src={data.image} alt="img"/>
+                    <figcaption style={styles.description}>
+                        <h2>{data.name}</h2>
                         <p className="icon-links">
-                            <a href="#"><i className="material-icons">accessible</i></a>
-                            <a href="#"><i className="material-icons">all_out</i></a>
-                            <a href="#"><i className="material-icons">autorenew</i></a>
+                            <a href="#"><img style={styles.fb} src='../img/navbar/Facebook.png' alt='yt'/></a>
                         </p>
-                        <p className="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his face.</p>
+                        <p className="description">{data.number}</p>
                     </figcaption>
                 </figure>
             </div>
