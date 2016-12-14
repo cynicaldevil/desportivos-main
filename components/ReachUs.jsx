@@ -1,5 +1,7 @@
 import React from 'react';
 
+require('../css/fonts.css');
+
 class ReachUs extends React.Component {
     constructor(props) {
         super(props);
@@ -26,9 +28,26 @@ class ReachUs extends React.Component {
                             </style>
                         </iframe>
                         `;
+
+        const styles = {
+            main: {
+                paddingTop: 94,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                backgroundColor: '#D9FEA5',
+                height: '100vh',
+            },
+            heading: {
+                color: '#415C1D',
+                fontFamily: `'Oswald', sans-serif`,
+                textTransform: 'uppercase',
+                fontSize: 40,
+            }
+        };
         return(
-            <div style={{paddingTop: 94}}>
-                <p>Reach Us</p>
+            <div style={styles.main}>
+                <h1 style={styles.heading}>Reach Us:</h1>
                 <div dangerouslySetInnerHTML={{__html: iframe}} />
             </div>
         );
