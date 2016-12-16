@@ -139,7 +139,8 @@ const LogoDiv = Radium(() => {
         main: {
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            zIndex: 2,
         },
         top: {
             logo: {
@@ -204,6 +205,7 @@ class Home extends React.Component {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
+                zIndex: 0
             },
             row: {
                 height: 130,
@@ -212,6 +214,7 @@ class Home extends React.Component {
             },
             honeycomb: {
                 marginTop: 94,
+                zIndex: 2,
                 '@media only screen and (max-width: 725px)': {
                     display: 'none'
                 }
@@ -223,7 +226,7 @@ class Home extends React.Component {
                 top: 0, left: 0,
                 border: '1px solid white',
                 backgroundColor: '#fff',
-                zIndex: -1,
+                zIndex: 1,
             },
         };
 
@@ -300,7 +303,7 @@ class Home extends React.Component {
                 detect_on: 'canvas',
                 events: {
                     onhover: {
-                        enable: false,
+                        enable: true,
                         mode: 'repulse'
                     },
                     onclick: {
@@ -324,7 +327,7 @@ class Home extends React.Component {
                         speed: 3
                 },
                     repulse: {
-                        distance: 154.29467033725558,
+                        distance: 120.29467033725558,
                         duration: 0.4
                     },
                     push: {
@@ -431,6 +434,7 @@ class Home extends React.Component {
                                fontSize: 50,
                                color: '#020737',
                                margin: 0,
+                               zIndex: 2,
                            }}>20<sup>th</sup> - 22<sup>nd</sup> Jan 2017</p>
             </div>
         );
