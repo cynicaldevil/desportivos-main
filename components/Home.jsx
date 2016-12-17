@@ -242,7 +242,7 @@ class Home extends React.Component {
         const particles_config = {
             particles: {
                 number: {
-                    value: 154,
+                    value: 224,
                     density: {
                         enable: true,
                         value_area: 800
@@ -267,7 +267,7 @@ class Home extends React.Component {
                     }
                 },
                 opacity: {
-                    value: 0.5,
+                    value: 0.7,
                     random: false,
                     anim: {
                         enable: false,
@@ -277,7 +277,7 @@ class Home extends React.Component {
                     }
                 },
                 size: {
-                    value: 4,
+                    value: 5,
                     random: true,
                     anim: {
                         enable: false,
@@ -288,7 +288,7 @@ class Home extends React.Component {
                 },
                 line_linked: {
                     enable: true,
-                    distance: 150,
+                    distance: 110,
                     color: '#f0b752',
                     opacity: 0.4,
                     width: 1
