@@ -17,8 +17,12 @@ class Sport extends React.Component {
         const styles = {
             main: {
                 ':hover': {
-                    border: '4px solid #D8D8D8',
                     cursor: 'pointer'
+                }
+            },
+            bg_image: {
+                '@media only screen and (max-width: 860px)': {
+                    visibility: 'hidden',
                 }
             }
         };
@@ -33,8 +37,10 @@ class Sport extends React.Component {
         return (
             <li className="grid__item" style={show_styles()}>
                 <div className="grid__link" onClick={() => this.props.onClickCB(this.props.name) }>
-                    <img className="grid__img layer" src={res('img/events/back_1.png')} alt="Canvas Dummy" />
-                    <img className="grid__img layer" src={res('img/events/back_2.png')} alt="Dummy" />
+                    <img className="grid__img layer" style={styles.bg_image}
+                    src={res('img/events/back_1.png')} alt="Canvas Dummy" />
+                    <img className="grid__img layer" style={styles.bg_image}
+                    src={res('img/events/back_2.png')} alt="Dummy" />
                     <img className="grid__img layer" src={this.props.image} alt="01" />
                     <span className="grid__title">{this.props.name}</span>
                 </div>
@@ -186,10 +192,24 @@ class Events extends React.Component {
             panel_is_visible: false,
             panel_data: null,
             name: null,
+            show_dsktp: window.innerWidth > 860 ? true : false,
         };
     }
 
+    update_device = () => {
+        if(this.state.show_dsktp ^ window.innerWidth > 860) {
+            this.setState((prevState) => {
+                return {
+                    show_dsktp: window.innerWidth > 860 ? true : false,
+                };
+            });
+        }
+    }
+
     componentDidMount() {
+
+        window.addEventListener("resize", this.update_device);
+
 
         const script_paths = [
             res('js/events/modernizr.custom.js'),
@@ -260,6 +280,10 @@ class Events extends React.Component {
         }, 3000);
     }
 
+    componentWillUnmount () {
+        window.removeEventListener("resize", this.update_device);
+    }
+
     onSportClick = (sport) => {
         const data = Rules.get(sport);
         this.setState({
@@ -313,8 +337,28 @@ class Events extends React.Component {
                 '@media only screen and (max-width: 860px)': {
                     marginTop: 150,
                 }
+            },
+            mobile: {
+                marginTop: 50,
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-around',
+                listStyle: 'none',
             }
         };
+
+        const dsktp = <div className="isolayer isolayer--scroll1 isolayer--shadow">
+                        <ul className="grid grid--effect-flip">
+                            {display_sports}
+                        </ul>
+                        </div>;
+
+        const mobile = <div style={styles.mobile}>
+                            {display_sports}
+                        </div>;
 
         return(
             <div style={styles.main}>
@@ -330,11 +374,7 @@ class Events extends React.Component {
                                                         onModalCloseCB={this.onModalCloseCB}
                                                     />}
                     <ScrollHelper />
-                    <div className="isolayer isolayer--scroll1 isolayer--shadow">
-                        <ul style={styles.list} className="grid grid--effect-flip">
-                            {display_sports}
-                        </ul>
-                    </div>
+                    {this.state.show_dsktp ? dsktp : mobile}
                 </div>
             </div>
         );
