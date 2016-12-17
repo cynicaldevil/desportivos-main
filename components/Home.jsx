@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Radium from 'radium';
+import { rotateIn } from 'react-animations';
 import { Button } from 'react-bootstrap';
 import Particles from 'react-particles-js';
 
@@ -9,6 +10,7 @@ import res from '../utils/resolve';
 
 require('../css/fonts.css');
 
+@Radium
 class Hexagon extends React.Component {
     constructor(props) {
         super(props);
@@ -23,14 +25,17 @@ class Hexagon extends React.Component {
                 width: this.props.length,
                 position: 'relative',
                 display: 'inline-block',
-                transform: 'rotateZ(90deg)'
+                ':hover': {
+                    animation: 'x 1s',
+                    animationName: Radium.keyframes(rotateIn, 'rotateIn'),
+                },
             },
             hexagon: {
                 height: '100%',
                 width: (100 * 0.57735) + '%',
                 display: 'inline-block',
                 backgroundColor: '#556474',
-                transform: 'rotateZ(90deg)',
+                transform: 'rotateZ(180deg)',
                 backgroundColor: '#FFD35D',
             },
             inner_hexagon: {
@@ -45,7 +50,7 @@ class Hexagon extends React.Component {
                 height: 'inherit',
                 width: (100 * 0.57735) + '%',
                 content: '',
-                transform: 'rotateZ(30deg)',
+                transform: 'rotateZ(120deg)',
                 backgroundColor: '#FFD35D',
             },
             hexagon_after: {
@@ -57,7 +62,7 @@ class Hexagon extends React.Component {
                 width: (100 * 0.57735) + '%',
                 content: '',
                 zIndex: -1,
-                transform: 'rotateZ(-30deg)',
+                transform: 'rotateZ(60deg)',
                 backgroundColor: '#FFD35D',
             },
             innermost: {
