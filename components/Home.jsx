@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Radium from 'radium';
-import { rotateIn } from 'react-animations';
+import { pulse } from 'react-animations';
 import { Button } from 'react-bootstrap';
 import Particles from 'react-particles-js';
 
@@ -27,7 +27,7 @@ class Hexagon extends React.Component {
                 display: 'inline-block',
                 ':hover': {
                     animation: 'x 1s',
-                    animationName: Radium.keyframes(rotateIn, 'rotateIn'),
+                    animationName: Radium.keyframes(pulse, 'pulse'),
                 },
             },
             hexagon: {
