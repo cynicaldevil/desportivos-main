@@ -83,18 +83,22 @@ class Hexagon extends React.Component {
             }
         };
         const style_according_to_browser = () => {
-            if(navigator.userAgent.indexOf("Firefox") != -1 )
+            if(navigator.userAgent.indexOf("Chrome") != -1){
+                return {...styles.inner_hexagon,
+                            display: 'flex',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                        };
+            }
+            else if(navigator.userAgent.indexOf("Firefox") != -1)
             {
                 return {...styles.inner_hexagon,
                             marginTop: 20,
                         };
             }
-            else {
+            else if(navigator.userAgent.indexOf("Safari") != -1) {
                 return {...styles.inner_hexagon,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'space-around',
-                            alignItems: 'center',
+                            marginTop: 20,
                         };
             }
         };
