@@ -29,6 +29,7 @@ class Contact extends React.Component {
                 fontFamily: `Montserrat`,
                 textTransform: 'uppercase',
                 fontSize: 14,
+                fontWeight: 700,
                 marginBottom: 4,
             },
             name: {
@@ -312,7 +313,7 @@ class Contacts extends React.Component {
                 };
                 const styles = {
                     main: {
-                        borderBottom: '1px solid white',
+                        borderBottom: '2px solid black',
                     },
                     group: {
                         padding: 30,
@@ -339,7 +340,9 @@ class Contacts extends React.Component {
         const styles = {
             main: {
                 paddingTop: 94,
-                backgroundImage: `url('http://materialdesignblog.com/wp-content/uploads/2016/06/image3.jpg')`
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'fixed',
+                backgroundImage: `url('https://images4.alphacoders.com/592/592164.jpg')`,
             }
         };
         return(
