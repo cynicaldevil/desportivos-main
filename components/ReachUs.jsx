@@ -35,14 +35,14 @@ class ReachUs extends React.Component {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                backgroundColor: '#D9FEA5',
+                backgroundImage: `url('http://vesd.lnmiit.ac.in/images/sample/slider/img3.png')`,
                 height: '100vh',
             },
             heading: {
-                color: '#415C1D',
+                color: '#FFF',
                 fontFamily: `'Oswald', sans-serif`,
                 textTransform: 'uppercase',
-                fontSize: 40,
+                fontSize: 50,
             }
         };
         return(
