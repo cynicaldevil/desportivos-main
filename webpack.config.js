@@ -71,7 +71,8 @@ const prod_config = Object.assign({}, base_config, {
             new webpack.optimize.UglifyJsPlugin({
                                       compress:{
                                         warnings: true
-                                      }
+                                      },
+                                      mangle: false
                                     }),
             new CopyWebpackPlugin([
                 {from: './img', to: './img'},

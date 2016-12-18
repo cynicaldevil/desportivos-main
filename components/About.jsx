@@ -73,7 +73,7 @@ class About extends React.Component {
                          facilitate cross-cultural learning experiences. The fest aims its students to
                          appreciate the unity and diversity that our culture offers and develop a
                          spirit for sports.
-                         Desportivos’17 will span over a period of three days that would see a
+                         Desportivos '17 will span over a period of three days that would see a
                          multitude of academic and technical students remodel into sports fanatics.
                          Enthusiasm and sportsman spirit are the key elements that make Desportivos
                          an enthralling experience.`}
@@ -83,7 +83,7 @@ class About extends React.Component {
                 <div style={styles.topDiv}>
                     <h1 style={styles.header}>Meet Vector!</h1>
                     <p style={styles.text}>
-                        {`Vector, the mascot of Desportivos’17, is the most visible face of Desportivos.
+                        {`Vector, the mascot of Desportivos '17, is the most visible face of Desportivos.
                         His name comes from the qualities that a sportsperson must possess i.e. – direction
                         as well as magnitude. Vector is an achiever with a positive attitude and is a fierce
                         competitor, but also possesses integrity and honesty.`}
